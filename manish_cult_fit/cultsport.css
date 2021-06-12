@@ -152,15 +152,15 @@ a {
 
 @keyframes popup {
   0% {
-    top: 110%;
+      top: 110%;
   }
 
   30% {
-    top: 30%;
+      top: 30%;
   }
 
   100% {
-    top: 47%;
+      top: 47%;
   }
 }
 
@@ -204,6 +204,8 @@ a {
   font-size: 20px;
   font-weight: bolder;
   margin-bottom: 3px;
+  font-size: 14px;
+  margin-top: 15px;
 }
 
 #login-input img {
@@ -212,9 +214,9 @@ a {
 
 #login-input-container {
   max-width: fit-content;
-  margin: 60px auto 0px;
-  font-family: "Roboto", sans-serif;
-  border-bottom: 2px solid rgb(151, 151, 151);
+  margin: 10px auto 0px;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 #login-input input {
@@ -222,11 +224,17 @@ a {
   font-size: 17px;
   color: rgb(0, 0, 0);
   letter-spacing: 5px;
-  padding-left: 10px;
+  border-bottom: 2px solid rgb(151, 151, 151);
+  margin-top: 5px;
+}
+
+#login-password {
+  letter-spacing: normal !important;
 }
 
 #login-input input:focus {
   outline: none;
+  border-bottom: 2px solid black;
 }
 
 #login-input input::-webkit-outer-spin-button,
@@ -253,36 +261,21 @@ a {
   border-radius: 31px;
   font-size: 18px;
   cursor: pointer;
-  background-image: linear-gradient(
-    99deg,
-    rgb(202, 202, 202),
-    rgb(199, 199, 199)
-  );
+  background-image: linear-gradient(99deg, rgb(202, 202, 202), rgb(199, 199, 199));
 }
 
 .input-login-box:hover {
-  color: rgb(255, 255, 255);
   box-shadow: rgb(247 123 155 / 71%) 0px 3px 16px 0px;
-  border: 0px;
-  width: 69%;
-  height: 50px;
-  border-radius: 31px;
-  font-size: 18px;
-  cursor: pointer;
-  background-image: linear-gradient(
-    101deg,
-    rgb(247, 69, 48),
-    rgb(255, 46, 115)
-  );
+  background-image: linear-gradient(101deg, rgb(247, 69, 48), rgb(255, 46, 115));
 }
 
 .TnC-check {
   font-size: 13px;
   letter-spacing: 0px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: rgb(102, 102, 102);
   width: 69%;
-  margin: 20px auto;
+  margin: 20px auto 10px;
   text-align: left;
   font-weight: 700;
 }
@@ -298,24 +291,67 @@ a {
 }
 
 #login-with-gmail {
-  color: rgb(0, 0, 0);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
   box-shadow: rgb(202 202 202) 0px 3px 16px 0px;
   border: 0px;
   width: 69%;
   height: 50px;
   border-radius: 31px;
   font-size: 18px;
-  background: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
-  margin: 25px auto;
+  margin: 10px auto;
   align-items: center;
   cursor: pointer;
+  background-image: linear-gradient(to right, rgb(111, 105, 170), rgb(55, 138, 197));
 }
 
 #login-with-gmail i {
   padding: 0px 10px;
 }
+
+        /* ------------User-information-login------------- */
+        #user-info-popup {
+          display: none;
+          position: fixed;
+          padding: 3px;
+          background: rgb(255, 255, 255);
+          text-align: left;
+          font-size: 16px;
+          z-index: 6;
+          box-shadow: rgb(0 0 0) 0px 0px 30px -16px;
+          border-width: 15px;
+          border-style: solid;
+          border-color: transparent transparent rgb(255, 255, 255);
+          top: 50px;
+          margin-left: -15px;
+          left: 89%;
+          width: fit-content;
+      }
+
+      #user-info-popup:hover {
+          display: inherit;
+      }
+
+
+
+      #user-info-popup div {
+          cursor: pointer;
+          font-family: 'Poppins', sans-serif;
+          font-weight: 600;
+      }
+
+      #user-info-popup div i {
+          margin-right: 20px;
+      }
+
+
+      #user-info-popup div:hover {
+          opacity: 0.5;
+      }
+
 
 /* -------- Cart-window ---------- */
 
@@ -589,6 +625,7 @@ a {
   text-decoration: line-through;
   font-size: 13px;
   color: gray;
+  margin-right: 10px;
 }
 .discount {
   font-weight: 600;
@@ -649,8 +686,8 @@ a {
   letter-spacing: 0.05em;
 }
 hr {
-  margin: auto;
-  width: 80%;
+  margin: 10px auto;
+  width: 100%;
 }
 
 .accordion > li:after {
@@ -762,6 +799,7 @@ a {
   padding: 30px 24px 70px;
   color: #a2a2a2;
   font-family: system-ui;
+  margin-top: 15px;
 }
 
 #important-links-list {

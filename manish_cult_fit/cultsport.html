@@ -11,14 +11,12 @@
             rel="stylesheet">
         <link rel="stylesheet" href="cultsport.css">
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/b169d8feab.js" crossorigin="anonymous"></script>
         <title>Buy Sportswear Online - Up to 60% Off on Sportswear & Shoes | Cult Gear</title>
         <style>
-a{
-    cursor: pointer;
-}
-
-
-
+            a{
+                cursor: pointer;
+            }
         </style>
     </head>
 
@@ -28,7 +26,7 @@ a{
                 <nav>
                     <div class="nav-grid">
                         <div id="logo">
-                            <a href="Home.html">
+                            <a href="../Cultfit-project/Home.html">
                                 <div id="logo-img">
                                     <img src="https://static.cure.fit/assets/images/curefit-v-man.svg" alt=""
                                         width="38px">
@@ -84,20 +82,23 @@ a{
 
         <div id="login-page">
             <div id="close-button">
-                <button onclick="window.location.href = 'index.html'"><span>X</span></button>
+                <button onclick="window.location.href = 'cultsport.html'"><span>X</span></button>
             </div>
             <div id="login-logo-popup">
                 <div><img src="https://static.cure.fit/assets/images/curefit_login_logo.svg" alt=""></div>
                 <img src="https://static.cure.fit/assets/images/cult_name.svg" alt="">
             </div>
             <div id="login-input-container">
-                <div id="login-input">+91
-                    <img src="https://static.cure.fit/assets/images/arrow-clp.svg" alt="">
-                    <input type="number" placeholder="Enter your mobile number" id="input-size">
+                <div id="login-input">Phone Number<br />
+                    <input type="number" placeholder="Enter your mobile number" id="login-phone">
+                </div>
+                <div id="login-input">Password<br />
+                    <input type="password" placeholder="Enter your Password" id="login-password">
+                    <i class="far fa-eye-slash" id="togglePassword" onclick="showHidePassword(id)"></i>
                 </div>
             </div>
             <div id="submit-login">
-                <button class="input-login-box">Continue</button>
+                <button class="input-login-box" onclick="verifyLogin()">Continue</button>
             </div>
             <div class="TnC-check">
                 <div>By Continuing you agree to the
@@ -106,14 +107,9 @@ a{
                 </div>
             </div>
             <div>
-                <div id="login-with-gmail">Continue with
-                    <i class="fab fa-google"></i>
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="far fa-envelope"></i>
-                </div>
+                <div id="login-with-gmail" onclick="window.location.href = '../Cultfit-project/Signup.html'">SIGN UP</div>
             </div>
         </div>
-
 
         <!-- cart-slde-bar -->
 
@@ -1167,6 +1163,17 @@ a{
             </div>
         </div>
 
+               <!--------------- User Information ---------------->
+
+    <div id="user-info-popup">
+        <div onclick="window.location.href ='../Cultfit-project/userProfile.html'"><i class="fas fa-user"></i> Profile</div>
+        <hr>
+        <div onclick="window.location.href ='../Cultfit-project/userSupport.html'"><i class="fas fa-headset"></i> Support</div>
+        <hr>
+        <div onclick="window.location.href ='../Cultfit-project/userAccount.html'"><i class="fas fa-cog"></i> Account</div>
+        <hr>
+        <div onclick="logout()"><i class="fas fa-sign-out-alt"></i> Log out</div>
+    </div>
 
         <script src="cultsport.js"></script>
     </body>
