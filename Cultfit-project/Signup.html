@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cultFit/SignUp</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(224, 224, 224);
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #container-img {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh2p1at7MwBiVzEpO1n7icNDDtbxdr8l-8Zw&usqp=CAU");
+            background-size: cover;
+            filter: blur(6px);
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #signUp-page {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+            width: 400px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            background-color: rgb(255, 255, 255);
+            animation: popup 0.4s linear;
+        }
+
+        @keyframes popup {
+            0% {
+                top: 110%;
+            }
+
+            30% {
+                top: 30%;
+            }
+
+            100% {
+                top: 47%;
+            }
+        }
+
+        #close-button {
+            max-width: 100%;
+            margin-top: 10px;
+            text-align: right;
+            padding: 10px 15px 0px 0px;
+        }
+
+        #close-button button {
+            font-size: 15px !important;
+            cursor: pointer;
+            font-weight: 600;
+            background: 0 0;
+            border: 0;
+            color: gray;
+            opacity: 0.5;
+        }
+
+        #close-button button:hover {
+            opacity: 1;
+        }
+
+        #login-logo-popup {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #login-logo-popup img {
+            align-self: center;
+        }
+
+        #logo-name {
+            width: 40% !important;
+        }
+
+        #logo {
+            width: 15%;
+        }
+
+        #number::-webkit-outer-spin-button,
+        #number::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        #number {
+            letter-spacing: 5px;
+        }
+
+        ::placeholder {
+            letter-spacing: normal;
+        }
+
+        .signup-input-field :nth-child(1) {
+            margin-top: 30px
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: rgb(55 138 197 / 71%) 0px 0px 16px 0px;
+            border: 2px solid rgb(55, 138, 197);
+        }
+
+        input {
+            font-size: 20px;
+            padding: 10px 14px;
+            margin-bottom: 10px;
+            border: 2px solid rgb(111, 105, 170);
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .signup-input-field button {
+            font-size: 20px;
+            padding: 12px;
+            width: 69%;
+            font-weight: 600;
+            border-radius: 10px;
+            margin-top: 30px;
+            color: white;
+            cursor: pointer;
+            background-image: linear-gradient(to right, rgb(111, 105, 170), rgb(55, 138, 197));
+        }
+
+
+        .signup-input-field div {
+            text-align: left;
+            width: 61%;
+            margin: auto;
+            display: list-item;
+            list-style-type: disc;
+            list-style-position: outside;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .signup-input-field div span {
+            color: rgb(224, 32, 32);
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container-img"></div>
+    <div class="container">
+        <div id="signUp-page">
+            <div id="close-button">
+                <button onclick="window.location.href = 'home.html'"><span>X</span></button>
+            </div>
+            <div id="login-logo-popup">
+                <div><img src="https://static.cure.fit/assets/images/curefit_login_logo.svg" alt="" id="logo"></div>
+                <img src="https://static.cure.fit/assets/images/cult_name.svg" alt="" id="logo-name">
+            </div>
+            <div class="signup-input-field">
+                <input type="text" id="name" placeholder="Full Name"> <br>
+                <input type="Email" id="email" placeholder="Email address"><br>
+                <input type="number" id="number" placeholder="Phone Number"><br>
+                <input type="Password" id="password" placeholder="Password"><br>
+                <div>By Continuing you agree to <a href="https://static.cult.fit/terms_cult.html"><span> Terms and
+                            Conditions </span></a> and <a href="https://static.cult.fit/privacy_cult.html"><span>Privacy
+                            Policy.</span></a></div>
+                <button onclick="adduser()">Submit</button>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+<script>
+    function adduser() {
+
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        let number = document.getElementById('number').value;
+
+        if (name == "") {
+            alert("Name should not be empty!");
+            return;
+        }
+        else if (email == "") {
+            alert("Email should not be empty!");
+            return;
+        }
+        else if (password == "") {
+            alert("Password should not be empty!");
+            return;
+        }
+        else if (number == "") {
+            alert("Number should not be empty!");
+            return;
+        }
+
+        var userObj = {
+            name,
+            email,
+            number,
+            password
+        }
+
+        let data = JSON.parse(localStorage.getItem('cultFitUsers'));
+        if (data == null) {
+            data = {};
+        }
+
+        
+        if (data[number] != undefined) {
+            alert(`User with ${number} already exist!`);
+            return;
+        }
+        else{
+            data[number] = userObj;
+        }
+
+        
+
+        localStorage.setItem('cultFitUsers', JSON.stringify(data));
+
+        window.location.href = "home.html";
+    }
+</script>
+
+</html>
