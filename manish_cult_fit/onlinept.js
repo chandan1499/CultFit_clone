@@ -166,3 +166,19 @@ var rotateDropDown = -180;
             cartDes.style.display = "inherit";
         }
     }
+
+
+    // ---------Location pop up---------- \\
+
+function locationUpdate(x) {
+    var a = document.getElementById('location-popup');
+    a.style.display = "none";
+
+    var b = document.getElementById('change-location-navbar');
+    b.innerText = x;
+}
+
+function displayLocation(x) {
+    var a = document.getElementById('location-popup');
+    a.style.display = "inherit";
+}
