@@ -1,4 +1,4 @@
-console.log('Myscript')
+// console.log('Myscript')
 
 
  var rotateDropDown = -180;
@@ -17,13 +17,104 @@ console.log('Myscript')
         }
     }
 
-    function fetchLoginPage() {
-        var blur = document.getElementById('blur');
-        blur.classList.toggle('active');
+        // ----------- login -----------\\
 
-        var popup = document.getElementById('login-page');
-        popup.classList.toggle('active');
-    }
+        let clickCount = 0;
+
+        function fetchLoginPage() {
+            clickCount++;
+            if (clickCount % 2 == 0) {
+                let x = document.getElementById('user-info-popup');
+                x.style.display = "none";
+                return;
+            }
+            var login = document.getElementById('login-text');
+            if (login.innerHTML != "Login") {
+                let x = document.getElementById('user-info-popup');
+                x.style.display = "inherit";
+                return;
+            }
+    
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active');
+    
+            var popup = document.getElementById('login-page');
+            popup.classList.toggle('active');
+        }
+    
+        function logout() {
+            let currentUser = {
+                name: "Login"
+            }
+    
+            localStorage.setItem('cultUserName', JSON.stringify(currentUser));
+            window.location.href = "cultsport.html";
+        }
+    
+    
+        function verifyLogin() {
+    
+            let phone = document.getElementById('login-phone').value;
+            let password = document.getElementById('login-password').value;
+    
+            let data = JSON.parse(localStorage.getItem('cultFitUsers'));
+    
+            if (data == null) {
+                alert("Invalid Credentials!");
+                return;
+            }
+    
+            if (data[phone] == undefined) {
+                alert("Invalid Credentials!");
+            }
+            else {
+                if (data[phone].password == password) {
+                    var login = document.getElementById('login-text');
+    
+                    if (login.innerHTML == "Login") {
+                        let currentUser = {
+                            name: data[phone].name,
+                            email: data[phone].email,
+                            password: data[phone].password,
+                            number: data[phone].number
+                        }
+    
+                        localStorage.setItem('cultUserName', JSON.stringify(currentUser));
+                    }
+                    else {
+                        alert("User already logged in");
+                    }
+                    window.location.href = "cultsport.html";
+                }
+                else {
+                    alert("Invalid Credentials!");
+                }
+            }
+    
+        }
+    
+    
+        let check = JSON.parse(localStorage.getItem('cultUserName'));
+        if (check != null) {
+            var login = document.getElementById('login-text');
+            login.innerHTML = `${check.name}`;
+        }
+    
+    
+        function showHidePassword(id) {
+            let input = document.getElementById('login-password');
+            let passwordType = document.getElementById(id);
+            if (input.type == 'password') {
+                input.type = "text";
+                passwordType.removeAttribute('class');
+                passwordType.setAttribute('class', 'far fa-eye');
+            }
+            else {
+                input.type = 'password';
+                passwordType.removeAttribute('class');
+                passwordType.setAttribute('class', 'far fa-eye-slash');
+            }
+        }
 
 
 
