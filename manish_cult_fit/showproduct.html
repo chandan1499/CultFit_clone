@@ -455,6 +455,9 @@
         let btn0 = document.createElement('button')
         btn0.textContent = 'ALL'
         btn0.id = 'btn0'
+        btn0.onclick = function(){
+            btn0.setAttribute("style", "border:2px solid yellow;background-color:transparent;border-radius:25px;")
+        }
         btn0.setAttribute("style", "margin:5px;30px;background-color:transparent;border-radius:25px;")
         show_data.append(p,p1,btn0)
 
