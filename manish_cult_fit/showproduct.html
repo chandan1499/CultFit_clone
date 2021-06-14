@@ -65,11 +65,17 @@
                 transition: 0.2s;
                 cursor: pointer;
             }
-
+            #notification{
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 3;
+            }
         </style>
     </head>
 
     <body>
+        <div id="notification"></div>
         <div class="container" id="blur">
             <div id="nav-bar">
                 <nav>
@@ -498,11 +504,13 @@
                     store[o].qty+=1;
                     localStorage.setItem("store", JSON.stringify(store))
                     found = true;
+                    notify('Already In Cart Quantity Increased',1)
                     break;
             }}
             if (!found) {
                     store.push(obj)
                     localStorage.setItem("store", JSON.stringify(store))
+                    notify('Added To Cart',0)
                 }
             }
 
@@ -606,5 +614,24 @@
                 passwordType.setAttribute('class', 'far fa-eye-slash');
             }
         }
-
+        function notify(msg,status){
+            let notification = document.getElementById('notification')
+            let para = document.createElement('p')
+            notification.setAttribute('style', "border-radius: 7px;")
+            para.innerHTML = msg
+            if(status){
+                para.setAttribute('style', "border-radius: 7px;background-color:orange;padding:10px;font-size:20px;font-weight:600;")
+                notification.append(para)
+                setTimeout(function () {
+                    notification.innerHTML = null
+                }, 2000)
+            }else{
+                para.setAttribute('style', "border-radius: 7px;background-color:green;padding:10px;font-size:20px;font-weight:600;")
+                notification.append(para)
+                setTimeout(function () {
+                    notification.innerHTML = null
+                }, 2000)
+            }
+            
+        }
 </script>
