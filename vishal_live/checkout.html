@@ -36,7 +36,6 @@
         
         .Fields div {
             margin-right: 10px;
-            border-radius: 20px;
         }
         
         label {
@@ -106,17 +105,12 @@
         a {
             text-decoration: none;
         }
-        
-        .hide {
-            cursor: progress;
-            display: none;
-        }
     </style>
 </head>
 
 <body>
     <h2 style="text-align: center">Checkout</h2>
-    <div id="fields" class="Fields">
+    <div class="Fields">
         <div>
             <div class="formContainer">
                 <form>
@@ -151,24 +145,18 @@
 </html>
 
 <script>
-    let store = JSON.parse(localStorage.getItem("store"));
+    let store = JSON.parse(localStorage.getItem("cartfood"));
     length.innerHTML = store.length;
-    let total = 0,
-        discount = 0;
+    let total = 0;
     for (var i = 0; i < store.length; i++) {
-        let cutprice = store[i].cutprice.split(" ").map(Number);
-        discount += cutprice[1] * store[i].qty - store[i].price * store[i].qty;
-        total += store[i].price * store[i].qty;
+        total += store[i].price;
     }
-    total = total - discount;
     let paybutton = document.getElementById("paybutton");
     paybutton.innerHTML = "Pay ₹ " + total;
 
     function checkoutbtn(event) {
         event.preventDefault();
-        let fields = document.getElementById("fields");
-        setTimeout(() => {
-            fields.setAttribute("class", "hide");
-        }, 3000);
+        alert("Thankyou");
+        console.log("Hii");
     }
 </script>
