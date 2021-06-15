@@ -442,518 +442,302 @@
 </html>
 <script>
     // display cart item
-
-    let data = JSON.parse(localStorage.getItem("cartfood"))
+  
+    let data = JSON.parse(localStorage.getItem("store"));
     // console.log(data)
-    let par = document.getElementById("contanier")
+    let par = document.getElementById("contanier");
     let totalbill = 0;
-<<<<<<< HEAD
-    data.forEach(element => {
-        // alert(element.name)
-        totalbill += +(element.price)
-        let outbox = document.createElement("div")
-        outbox.setAttribute("class", "outer-boxa flexis")
-        outbox.setAttribute("id", `d-${element.id}`)
-
-        let imgdiv = document.createElement('div')
-        imgdiv.style.backgroundImage = `url("${element.image}")`
-        imgdiv.setAttribute("class", "imgdiv ")
-        // outbox.append(imgdiv)
-
-        let fod_dit = document.createElement("div")
-        fod_dit.setAttribute("class", "food-dit")
-        //
-        let name_remo = document.createElement('div')
-        name_remo.setAttribute("class", "flexis")
-
-        let cname = document.createElement("p")
-        cname.innerHTML = "CULTFOOD"
-        cname.setAttribute("class", "clhading")
-
-        let remove = document.createElement('p')
-        remove.setAttribute("class", "f-remove")
-        remove.innerHTML = "X"
-        remove.onclick = function () {
-            removediv(itm_countis, totalbill, element.id)
-        }
-        name_remo.append(cname, remove)
-
-        // outbox.ap(name_remo)
-        let f_name_n_p = document.createElement('div')
-        f_name_n_p.setAttribute("class", 'flexis')
-        //
-        let d_name = document.createElement('p')
-        d_name.setAttribute('class', 'd-name')
-        d_name.innerHTML = element.name
-
-        d_price = document.createElement('p')
-        d_price.setAttribute('class', 'd-price')
-        d_price.innerHTML = `<i class="fas fa-rupee-sign"></i> ${element.price}`
-
-        f_name_n_p.append(d_name, d_price)
-
-        // outbox.append(d_name)
-
-        //
-        let f_rating = document.createElement('div')
-        f_rating.setAttribute("class", "flexis")
-
-        let r_hading = document.createElement('p')
-        r_hading.setAttribute('class', 'f-rat-heading')
-        r_hading.innerHTML = "Food Rating"
-
-        let ratingis = document.createElement('p')
-        ratingis.setAttribute('class', 'f-rating')
-        ratingis.innerHTML = `${element.rating} <i class="far fa-star"></i>`
-=======
-    // data.forEach(element => {
-    //     // alert(element.name)
-    //     totalbill += +(element.price)
-    //     let outbox = document.createElement("div")
-    //     outbox.setAttribute("class", "outer-boxa flexis")
-    //     outbox.setAttribute("id", `d-${element.id}`)
-
-    //     let imgdiv = document.createElement('div')
-    //     imgdiv.style.backgroundImage = `url("${element.image}")`
-    //     imgdiv.setAttribute("class", "imgdiv ")
-    //     // outbox.append(imgdiv)
-
-    //     let fod_dit = document.createElement("div")
-    //     fod_dit.setAttribute("class", "food-dit")
-    //     //
-    //     let name_remo = document.createElement('div')
-    //     name_remo.setAttribute("class", "flexis")
-
-    //     let cname = document.createElement("p")
-    //     cname.innerHTML = "CULTFOOD"
-    //     cname.setAttribute("class", "clhading")
-
-    //     let remove = document.createElement('p')
-    //     remove.setAttribute("class", "f-remove")
-    //     remove.innerHTML = "X"
-    //     remove.onclick = function () {
-    //         removediv(itm_countis, totalbill, element.id)
-    //     }
-    //     name_remo.append(cname, remove)
-
-    //     // outbox.ap(name_remo)
-    //     //
-    //     let d_name = document.createElement('p')
-    //     d_name.setAttribute('class', 'd-name')
-    //     d_name.innerHTML = element.name
-
-    //     // outbox.append(d_name)
-
-    //     //
-    //     let f_rating = document.createElement('div')
-    //     f_rating.setAttribute("class", "flexis")
-
-    //     let r_hading = document.createElement('p')
-    //     r_hading.setAttribute('class', 'f-rat-heading')
-    //     r_hading.innerHTML = "Food Rating"
-
-    //     let ratingis = document.createElement('p')
-    //     ratingis.setAttribute('class', 'f-rating')
-    //     ratingis.innerHTML = `${element.rating} <i class="far fa-star"></i>`
-
-    //     f_rating.append(r_hading, ratingis)
-    //     // outbox.append(f_rating)
-    //     //
-    //     let f_q_div = document.createElement('div')
-    //     f_q_div.setAttribute("class", "flexis")
-
-    //     let qu_heading = document.createElement('p')
-    //     qu_heading.setAttribute("class", "quantity")
-    //     qu_heading.innerHTML = "Quantity"
-
-    //     let q_count_box = document.createElement('div')
-    //     q_count_box.setAttribute("class", "quantity-count-div1 ")
-
-    //     let inner_q_box = document.createElement('div')
-    //     inner_q_box.setAttribute("class", "quantity-count-div2 flexis")
-
-    //     let plus = document.createElement('p')
-    //     plus.innerHTML = `<i class="fas fa-plus"></i>`
-    //     plus.onclick = function () {
-    //         iteminc(itm_countis, totalbill, element.id)
-    //     }
-
-    //     let itemis = document.createElement('p')
-    //     itemis.innerHTML = "1"
-    //     itemis.setAttribute("id", `p-${element.id}`)
-    //     let itm_countis = itemis.innerHTML
-
-    //     let minus = document.createElement('p')
-    //     minus.innerHTML = `<i class="fas fa-minus"></i>`
-    //     minus.onclick = function () {
-    //         itemdec(itm_countis, totalbill, element.id)
-    //     }
-    //     // let hr = document.createElement('hr')
-    //     // hr.setAttribute("id", `hr-${element.id}`)
-
-    //     inner_q_box.append(plus, itemis, minus)
-    //     q_count_box.append(inner_q_box)
-    //     f_q_div.append(qu_heading, q_count_box)
-    //     fod_dit.append(name_remo, d_name, f_rating, f_q_div)
-    //     outbox.append(imgdiv, fod_dit)
-    //     par.append(outbox)
-
-    // });
->>>>>>> 6ae5d3e9a20de8cfeae2e344a75a84b4e60d9f87
-
-
-<<<<<<< HEAD
-        let qu_heading = document.createElement('p')
-        qu_heading.setAttribute("class", "quantity")
-        qu_heading.innerHTML = "Quantity"
-
-        let q_count_box = document.createElement('div')
-        q_count_box.setAttribute("class", "quantity-count-div1 ")
-
-        let inner_q_box = document.createElement('div')
-        inner_q_box.setAttribute("class", "quantity-count-div2 flexis")
-
-        let plus = document.createElement('p')
-        plus.innerHTML = `<i class="fas fa-plus"></i>`
-        plus.onclick = function () {
-            iteminc(itm_countis, totalbill, element.id)
-        }
-
-        let itemis = document.createElement('p')
-        itemis.innerHTML = "1"
-        itemis.setAttribute("id", `p-${element.id}`)
-        let itm_countis = itemis.innerHTML
-
-        let minus = document.createElement('p')
-        minus.innerHTML = `<i class="fas fa-minus"></i>`
-        minus.onclick = function () {
-            itemdec(itm_countis, totalbill, element.id)
-        }
-        // let hr = document.createElement('hr')
-        // hr.setAttribute("id", `hr-${element.id}`)
-
-        inner_q_box.append(plus, itemis, minus)
-        q_count_box.append(inner_q_box)
-        f_q_div.append(qu_heading, q_count_box)
-        fod_dit.append(name_remo, f_name_n_p, f_rating, f_q_div)
-        outbox.append(imgdiv, fod_dit)
-        par.append(outbox)
-
-
-
-
-
-
-
+    data.forEach((element) => {
+      // alert(element.name)
+      totalbill += +element.price;
+      let outbox = document.createElement("div");
+      outbox.setAttribute("class", "outer-boxa flexis");
+      outbox.setAttribute("id", `d-${element.id}`);
+  
+      let imgdiv = document.createElement("div");
+      imgdiv.style.backgroundImage = `url("${element.image}")`;
+      imgdiv.setAttribute("class", "imgdiv ");
+      // outbox.append(imgdiv)
+  
+      let fod_dit = document.createElement("div");
+      fod_dit.setAttribute("class", "food-dit");
+      //
+      let name_remo = document.createElement("div");
+      name_remo.setAttribute("class", "flexis");
+  
+      let cname = document.createElement("p");
+      cname.innerHTML = "CULTFOOD";
+      cname.setAttribute("class", "clhading");
+  
+      let remove = document.createElement("p");
+      remove.setAttribute("class", "f-remove");
+      remove.innerHTML = "X";
+      remove.onclick = function () {
+        removediv(itm_countis, totalbill, element.id);
+      };
+      name_remo.append(cname, remove);
+  
+      // outbox.ap(name_remo)
+      let f_name_n_p = document.createElement("div");
+      f_name_n_p.setAttribute("class", "flexis");
+      //
+      let d_name = document.createElement("p");
+      d_name.setAttribute("class", "d-name");
+      d_name.innerHTML = element.name;
+  
+      d_price = document.createElement("p");
+      d_price.setAttribute("class", "d-price");
+      d_price.innerHTML = `<i class="fas fa-rupee-sign"></i> ${element.price}`;
+  
+      f_name_n_p.append(d_name, d_price);
+  
+      // outbox.append(d_name)
+  
+      //
+      let f_rating = document.createElement("div");
+      f_rating.setAttribute("class", "flexis");
+  
+      let r_hading = document.createElement("p");
+      r_hading.setAttribute("class", "f-rat-heading");
+      r_hading.innerHTML = "Food Rating";
+  
+      let ratingis = document.createElement("p");
+      ratingis.setAttribute("class", "f-rating");
+      ratingis.innerHTML = `${element.rating} <i class="far fa-star"></i>`;
+  
+      f_rating.append(r_hading, ratingis);
+      // outbox.append(f_rating)
+      //
+      let f_q_div = document.createElement("div");
+      f_q_div.setAttribute("class", "flexis");
+  
+      let qu_heading = document.createElement("p");
+      qu_heading.setAttribute("class", "quantity");
+      qu_heading.innerHTML = "Quantity";
+  
+      let q_count_box = document.createElement("div");
+      q_count_box.setAttribute("class", "quantity-count-div1 ");
+  
+      let inner_q_box = document.createElement("div");
+      inner_q_box.setAttribute("class", "quantity-count-div2 flexis");
+  
+      let plus = document.createElement("p");
+      plus.innerHTML = `<i class="fas fa-plus"></i>`;
+      plus.onclick = function () {
+        iteminc(itm_countis, totalbill, element.id);
+      };
+  
+      let itemis = document.createElement("p");
+      itemis.innerHTML = "1";
+      itemis.setAttribute("id", `p-${element.id}`);
+      let itm_countis = itemis.innerHTML;
+  
+      let minus = document.createElement("p");
+      minus.innerHTML = `<i class="fas fa-minus"></i>`;
+      minus.onclick = function () {
+        itemdec(itm_countis, totalbill, element.id);
+      };
+      // let hr = document.createElement('hr')
+      // hr.setAttribute("id", `hr-${element.id}`)
+  
+      inner_q_box.append(plus, itemis, minus);
+      q_count_box.append(inner_q_box);
+      f_q_div.append(qu_heading, q_count_box);
+      fod_dit.append(name_remo, f_name_n_p, f_rating, f_q_div);
+      outbox.append(imgdiv, fod_dit);
+      par.append(outbox);
     });
-=======
->>>>>>> 6ae5d3e9a20de8cfeae2e344a75a84b4e60d9f87
-
+  
     //billing part
-    let totalpay = document.getElementById('total-p')
-    totalpay.innerHTML = `<i class="fas fa-rupee-sign"></i> ${totalbill}`
-
-    let dicount = document.getElementById('dis-p')
-    dicount.innerHTML = `<i class="fas fa-rupee-sign"></i> ${(totalbill * 35) / 100}`
-
-    let Payable = document.getElementById('to-p-is')
-    Payable.innerHTML = `<i class="fas fa-rupee-sign"></i> ${(totalbill * 65) / 100}`
-
-
-
-
+    let totalpay = document.getElementById("total-p");
+    totalpay.innerHTML = `<i class="fas fa-rupee-sign"></i> ${totalbill}`;
+  
+    let dicount = document.getElementById("dis-p");
+    dicount.innerHTML = `<i class="fas fa-rupee-sign"></i> ${
+      (totalbill * 35) / 100
+    }`;
+  
+    let Payable = document.getElementById("to-p-is");
+    Payable.innerHTML = `<i class="fas fa-rupee-sign"></i> ${
+      (totalbill * 65) / 100
+    }`;
+  
     function removediv(coun, totalbill, id) {
-        let data = JSON.parse(localStorage.getItem('cartfood'))
-        console.log(data)
-        // let f_data = {}
-        let f_p = 0;
-        for (let k = 0; k < data.length; k++) {
-            // console.log(data[k].id)
-            if (+(data[k].id) == id) {
-                f_data = data[k]
-                f_p = +(data[k].price)
-                break;
-            }
-
+      let data = JSON.parse(localStorage.getItem("cartfood"));
+      console.log(data);
+      // let f_data = {}
+      let f_p = 0;
+      for (let k = 0; k < data.length; k++) {
+        // console.log(data[k].id)
+        if (+data[k].id == id) {
+          f_data = data[k];
+          f_p = +data[k].price;
+          break;
         }
-        console.log(f_data, id, f_p)
-        // alert("item removed" + coun + " " + totalbill + " " + id)
-        let div = document.getElementById(`d-${id}`)
-        let p = document.getElementById(`p-${id}`)
-        let get_price = document.getElementById("total-p").innerHTML.split(" ")
-        let p_show_div = document.getElementById("total-p")
-        let totalamount = +(get_price[get_price.length - 1])
-        // let hris = document.getElementById(`hr-${id}`)
-        // console.log(div, p, totalamount, p_show_div)
-        let final_am = (totalamount - f_p * coun)
-        p_show_div.innerHTML = `<i class="fas fa-rupee-sign"></i> ${final_am}`
-
-        let dicount = document.getElementById('dis-p')
-        dicount.innerHTML = `<i class="fas fa-rupee-sign"></i> ${(final_am * 35) / 100}`
-
-        let Payable = document.getElementById('to-p-is')
-        Payable.innerHTML = `<i class="fas fa-rupee-sign"></i> ${(final_am * 65) / 100}`
-        div.remove()
-
-
-        // console.log(final_am)
-
-
-
+      }
+      console.log(f_data, id, f_p);
+      // alert("item removed" + coun + " " + totalbill + " " + id)
+      let div = document.getElementById(`d-${id}`);
+      let p = document.getElementById(`p-${id}`);
+      let get_price = document.getElementById("total-p").innerHTML.split(" ");
+      let p_show_div = document.getElementById("total-p");
+      let totalamount = +get_price[get_price.length - 1];
+      // let hris = document.getElementById(`hr-${id}`)
+      // console.log(div, p, totalamount, p_show_div)
+      let final_am = totalamount - f_p * coun;
+      p_show_div.innerHTML = `<i class="fas fa-rupee-sign"></i> ${final_am}`;
+  
+      let dicount = document.getElementById("dis-p");
+      dicount.innerHTML = `<i class="fas fa-rupee-sign"></i> ${
+        (final_am * 35) / 100
+      }`;
+  
+      let Payable = document.getElementById("to-p-is");
+      Payable.innerHTML = `<i class="fas fa-rupee-sign"></i> ${
+        (final_am * 65) / 100
+      }`;
+      div.remove();
+  
+      // console.log(final_am)
     }
     function iteminc(itm_countis, totalbill, id) {
-        let count_p = document.getElementById(`p-${id}`)
-        let it_count = +(count_p.innerHTML)
-        let p_show_div = document.getElementById("total-p")
-        let get_price = document.getElementById("total-p").innerHTML.split(" ")
-        let totalamount = +(get_price[get_price.length - 1])
-        it_count++;
-
-        let f_p = 0;
-        for (let k = 0; k < data.length; k++) {
-            // console.log(data[k].id)
-            if (+(data[k].id) == id) {
-                f_data = data[k]
-                f_p = +(data[k].price)
-                break;
-            }
-
+      let count_p = document.getElementById(`p-${id}`);
+      let it_count = +count_p.innerHTML;
+      let p_show_div = document.getElementById("total-p");
+      let get_price = document.getElementById("total-p").innerHTML.split(" ");
+      let totalamount = +get_price[get_price.length - 1];
+      it_count++;
+  
+      let f_p = 0;
+      for (let k = 0; k < data.length; k++) {
+        // console.log(data[k].id)
+        if (+data[k].id == id) {
+          f_data = data[k];
+          f_p = +data[k].price;
+          break;
         }
-        let p_after_inc = totalamount + f_p
-
-        count_p.innerHTML = it_count
-        p_show_div.innerHTML = `<i class="fas fa-rupee-sign"></i> ${p_after_inc}`
-        let dicount = document.getElementById('dis-p')
-        dicount.innerHTML = `<i class="fas fa-rupee-sign"></i> ${(p_after_inc * 35) / 100}`
-
-        let Payable = document.getElementById('to-p-is')
-        Payable.innerHTML = `<i class="fas fa-rupee-sign"></i> ${(p_after_inc * 65) / 100}`
-
-
-        console.log(count_p, it_count, f_p)
-
+      }
+      let p_after_inc = totalamount + f_p;
+  
+      count_p.innerHTML = it_count;
+      p_show_div.innerHTML = `<i class="fas fa-rupee-sign"></i> ${p_after_inc}`;
+      let dicount = document.getElementById("dis-p");
+      dicount.innerHTML = `<i class="fas fa-rupee-sign"></i> ${
+        (p_after_inc * 35) / 100
+      }`;
+  
+      let Payable = document.getElementById("to-p-is");
+      Payable.innerHTML = `<i class="fas fa-rupee-sign"></i> ${
+        (p_after_inc * 65) / 100
+      }`;
+  
+      console.log(count_p, it_count, f_p);
     }
     function itemdec(itm_countis, totalbill, id) {
-        let count_p = document.getElementById(`p-${id}`)
-        let div = document.getElementById(`d-${id}`)
-        let it_count = +(count_p.innerHTML)
-        let p_show_div = document.getElementById("total-p")
-        let get_price = document.getElementById("total-p").innerHTML.split(" ")
-        let totalamount = +(get_price[get_price.length - 1])
-        it_count--;
-
-
-        let f_p = 0;
-        for (let k = 0; k < data.length; k++) {
-            // console.log(data[k].id)
-            if (+(data[k].id) == id) {
-                f_data = data[k]
-                f_p = +(data[k].price)
-                break;
-            }
-
+      let count_p = document.getElementById(`p-${id}`);
+      let div = document.getElementById(`d-${id}`);
+      let it_count = +count_p.innerHTML;
+      let p_show_div = document.getElementById("total-p");
+      let get_price = document.getElementById("total-p").innerHTML.split(" ");
+      let totalamount = +get_price[get_price.length - 1];
+      it_count--;
+  
+      let f_p = 0;
+      for (let k = 0; k < data.length; k++) {
+        // console.log(data[k].id)
+        if (+data[k].id == id) {
+          f_data = data[k];
+          f_p = +data[k].price;
+          break;
         }
-        let p_after_dic = totalamount - f_p
-
-        count_p.innerHTML = it_count
-        p_show_div.innerHTML = `<i class="fas fa-rupee-sign"></i> ${p_after_dic}`
-        let dicount = document.getElementById('dis-p')
-        dicount.innerHTML = `<i class="fas fa-rupee-sign"></i> ${(p_after_dic * 35) / 100}`
-
-        let Payable = document.getElementById('to-p-is')
-        Payable.innerHTML = `<i class="fas fa-rupee-sign"></i> ${(p_after_dic * 65) / 100}`
-        if (it_count <= 0) {
-            div.remove()
-        }
-
-        console.log(count_p, it_count, f_p)
+      }
+      let p_after_dic = totalamount - f_p;
+  
+      count_p.innerHTML = it_count;
+      p_show_div.innerHTML = `<i class="fas fa-rupee-sign"></i> ${p_after_dic}`;
+      let dicount = document.getElementById("dis-p");
+      dicount.innerHTML = `<i class="fas fa-rupee-sign"></i> ${
+        (p_after_dic * 35) / 100
+      }`;
+  
+      let Payable = document.getElementById("to-p-is");
+      Payable.innerHTML = `<i class="fas fa-rupee-sign"></i> ${
+        (p_after_dic * 65) / 100
+      }`;
+      if (it_count <= 0) {
+        div.remove();
+      }
+  
+      console.log(count_p, it_count, f_p);
     }
-
-
-
+  
     //end display cart item
     var rotateDropDown = -180;
     function dropdowneffect(x) {
-        var img = document.getElementById(x);
-        img.style.transform = `rotate(${rotateDropDown}deg)`;
-        var dropdown = document.getElementById('dropdown-links');
-        if (rotateDropDown == -180) {
-            rotateDropDown = 0;
-            dropdown.style.display = "inline";
-        }
-        else {
-            rotateDropDown = -180;
-            dropdown.style.display = "none";
-            console.log("hidden");
-        }
+      var img = document.getElementById(x);
+      img.style.transform = `rotate(${rotateDropDown}deg)`;
+      var dropdown = document.getElementById("dropdown-links");
+      if (rotateDropDown == -180) {
+        rotateDropDown = 0;
+        dropdown.style.display = "inline";
+      } else {
+        rotateDropDown = -180;
+        dropdown.style.display = "none";
+        console.log("hidden");
+      }
     }
-
-<<<<<<< HEAD
+  
     //   addressadd
-    function addressadd() {
-
-
-    }
+    function addressadd() {}
     function addthisadd() {
-        let addressis = document.getElementById('addressdisplay')
-
-        let inputadd = document.getElementById('addres-take-part').nodeValue
-
-        addressis.innerHTML = inputadd
+      let addressis = document.getElementById("addressdisplay");
+  
+      let inputadd = document.getElementById("addres-take-part").nodeValue;
+  
+      addressis.innerHTML = inputadd;
     }
-
+  
     // login
     function fetchLoginPage() {
-        var blur = document.getElementById('blur');
-        blur.classList.toggle('active');
-=======
->>>>>>> 6ae5d3e9a20de8cfeae2e344a75a84b4e60d9f87
-
-
-    
-    // ---------Log in---------- \\ 
-
-let clickCount = 0;
-
-function fetchLoginPage() {
-    clickCount++;
-    if (clickCount % 2 == 0) {
-        let x = document.getElementById('user-info-popup');
-        x.style.display = "none";
-        return;
+      var blur = document.getElementById("blur");
+      blur.classList.toggle("active");
+  
+      var popup = document.getElementById("login-page");
+      popup.classList.toggle("active");
     }
-    var login = document.getElementById('login-text');
-    if (login.innerHTML != "Login") {
-        let x = document.getElementById('user-info-popup');
-        x.style.display = "inherit";
-        return;
-    }
-
-    var blur = document.getElementById('blur');
-    blur.classList.toggle('active');
-
-    var popup = document.getElementById('login-page');
-    popup.classList.toggle('active');
-}
-
-function logout() {
-    let currentUser = {
-        name: "Login"
-    }
-
-    localStorage.setItem('cultUserName', JSON.stringify(currentUser));
-    window.location.href = "foodhub.html";
-}
-
-function displayCart() {
-    var cart = document.querySelector('.Cart-container');
-    cart.style.display = "inherit";
-}
-
-function hideCart() {
-    var cart = document.querySelector('.Cart-container');
-    cart.style.display = "none";
-}
-
-function verifyLogin() {
-
-    let phone = document.getElementById('login-phone').value;
-    let password = document.getElementById('login-password').value;
-
-    let data = JSON.parse(localStorage.getItem('cultFitUsers'));
-
-    if (data == null) {
-        alert("Invalid Credentials!");
-        return;
-    }
-
-    if (data[phone] == undefined) {
-        alert("Invalid Credentials!");
-    }
-    else {
-        if (data[phone].password == password) {
-            var login = document.getElementById('login-text');
-
-            if (login.innerHTML == "Login") {
-                let currentUser = data[phone];
-
-                localStorage.setItem('cultUserName', JSON.stringify(currentUser));
-            }
-            else {
-                alert("User already logged in");
-            }
-            window.location.href = "cart.html";
-        }
-        else {
-            alert("Invalid Credentials!");
-        }
-    }
-
-}
-
-
-let check = JSON.parse(localStorage.getItem('cultUserName'));
-if (check != null) {
-    var login = document.getElementById('login-text');
-    login.innerHTML = `${check.name}`;
-}
-
-function showHidePassword(id) {
-    let input = document.getElementById('login-password');
-    let passwordType = document.getElementById(id);
-    if (input.type == 'password') {
-        input.type = "text";
-        passwordType.removeAttribute('class');
-        passwordType.setAttribute('class', 'far fa-eye');
-    }
-    else {
-        input.type = 'password';
-        passwordType.removeAttribute('class');
-        passwordType.setAttribute('class', 'far fa-eye-slash');
-    }
-}
-
-
-
-
-
-
+  
     //------------- Cart js ----------\\
     function displayCart() {
-        // var cart = document.querySelector('.Cart-container');
-        // cart.style.display = "inherit";
-        window.location.href = "cart.html"
+      // var cart = document.querySelector('.Cart-container');
+      // cart.style.display = "inherit";
+      window.location.href = "cart.html";
     }
-
+  
     function hideCart() {
-        var cart = document.querySelector('.Cart-container');
-        cart.style.display = "none";
+      var cart = document.querySelector(".Cart-container");
+      cart.style.display = "none";
     }
-
-
-
+  
     // cart js
-    var borderBottomAchor = document.getElementById('eatfit');
+    var borderBottomAchor = document.getElementById("eatfit");
     function underline(x) {
-        var a = document.getElementById(x);
-        borderBottomAchor.style.borderBottom = "none";
-        borderBottomAchor.style.fontWeight = "500";
-
-        borderBottomAchor = a;
-        borderBottomAchor.style.fontWeight = "bolder";
-        a.style.borderBottom = "2px solid rgb(255, 50, 120)";
-
-        var cartImg = document.getElementById('cart-img-1');
-        var cartDes = document.getElementById('cart-description');
-
-        if (x == "cultgear") {
-            cartImg.style.display = "none";
-            cartDes.style.display = "none";
-        }
-        else {
-            cartImg.style.display = "inherit";
-            cartDes.style.display = "inherit";
-        }
+      var a = document.getElementById(x);
+      borderBottomAchor.style.borderBottom = "none";
+      borderBottomAchor.style.fontWeight = "500";
+  
+      borderBottomAchor = a;
+      borderBottomAchor.style.fontWeight = "bolder";
+      a.style.borderBottom = "2px solid rgb(255, 50, 120)";
+  
+      var cartImg = document.getElementById("cart-img-1");
+      var cartDes = document.getElementById("cart-description");
+  
+      if (x == "cultgear") {
+        cartImg.style.display = "none";
+        cartDes.style.display = "none";
+      } else {
+        cartImg.style.display = "inherit";
+        cartDes.style.display = "inherit";
+      }
     }
-
-</script>
+  </script>

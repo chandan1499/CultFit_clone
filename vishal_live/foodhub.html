@@ -635,58 +635,58 @@
 <!-- <script src="Script.js"></script> -->
 <!-- <script sr></script> -->
 <script>
-    // var acc = document.getElementsByClassName("accordion");
-    // var i;
+    var acc = document.getElementsByClassName("accordion");
+    var i;
 
-    // for (i = 0; i < acc.length; i++) {
-    //     acc[i].addEventListener("click", function () {
-    //         this.classList.toggle("active");
-    //         var panel = this.nextElementSibling;
-    //         if (panel.style.maxHeight) {
-    //             panel.style.maxHeight = null;
-    //         } else {
-    //             panel.style.maxHeight = panel.scrollHeight + "px";
-    //         }
-    //     });
-    // }
-
-
-    // let fooddata = document.getElementById("viewpart")
-    // let showdata = JSON.parse(localStorage.getItem("fooddata"))
-    // let par = document.getElementById("viewpart")
-    // showdata.forEach(element => {
-    //     let cdiv = document.createElement('div')
-    //     cdiv.setAttribute('class', "foodbox")
-
-    //     let image = document.createElement('div')
-    //     image.style.backgroundImage = `url("${element.image}")`
-    //     image.setAttribute("class", "foodimg")
-    //     // image.src = element.image
-    //     let ditels = document.createElement('div')
-    //     ditels.setAttribute("class", "ditels")
-
-    //     let price = document.createElement('div')
-    //     price.innerHTML = `Price <i class="fas fa-rupee-sign"></i>${element.price} `
-
-    //     let rating = document.createElement('div')
-    //     rating.innerHTML = `Rating  ${element.rating}`
-
-    //     let time = document.createElement('div')
-    //     time.innerHTML = `<i class="far fa-clock"></i>${element.time} min`
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
 
 
-    //     let adcartbtn = document.createElement('button')
-    //     adcartbtn.innerHTML = "Add To cart"
-    //     adcartbtn.onclick = function () {
-    //         adincart(element);
-    //     }
-    //     ditels.append(price, rating, time, adcartbtn)
-    //     cdiv.append(image, ditels)
+    let fooddata = document.getElementById("viewpart")
+    let showdata = JSON.parse(localStorage.getItem("fooddata"))
+    let par = document.getElementById("viewpart")
+    showdata.forEach(element => {
+        let cdiv = document.createElement('div')
+        cdiv.setAttribute('class', "foodbox")
 
-    //     par.append(cdiv)
+        let image = document.createElement('div')
+        image.style.backgroundImage = `url("${element.image}")`
+        image.setAttribute("class", "foodimg")
+        // image.src = element.image
+        let ditels = document.createElement('div')
+        ditels.setAttribute("class", "ditels")
+
+        let price = document.createElement('div')
+        price.innerHTML = `Price <i class="fas fa-rupee-sign"></i>${element.price} `
+
+        let rating = document.createElement('div')
+        rating.innerHTML = `Rating  ${element.rating}`
+
+        let time = document.createElement('div')
+        time.innerHTML = `<i class="far fa-clock"></i>${element.time} min`
 
 
-    // });
+        let adcartbtn = document.createElement('button')
+        adcartbtn.innerHTML = "Add To cart"
+        adcartbtn.onclick = function () {
+            adincart(element);
+        }
+        ditels.append(price, rating, time, adcartbtn)
+        cdiv.append(image, ditels)
+
+        par.append(cdiv)
+
+
+    });
 
     function adincart(el) {
 
