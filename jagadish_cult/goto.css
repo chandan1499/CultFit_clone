@@ -128,7 +128,7 @@ a {
 /* Login-page-css */
 
 #login-page {
-  position: fixed;
+  position: absolute;
   top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -917,3 +917,118 @@ a {
     width: 25%;
   }
 }
+
+.inform {
+  width: 100%;
+  margin-top: 60px;
+  height: auto;
+  padding-top: 55px;
+  padding-bottom: 55px;
+  background-color: rgb(242, 244, 248);
+  font-size: 12px;
+}
+.inform > div {
+  width: 90%;
+  margin: auto;
+  columns: 2;
+}
+@media only screen and (max-width: 800px) {
+  .inform > div {
+    columns: 1;
+  }
+}
+.bold {
+  font-weight: 550;
+}
+.inform > div > div {
+  margin-left: 40px;
+}
+.inform > div > div > h4,
+p {
+  margin-bottom: 20px;
+}
+.inform > div > div > p {
+  color: gray;
+}
+
+        /* ----------location-popup-css----------- */
+
+ #location-popup {
+  height: 70vh;
+  display: none;
+  flex-direction: column;
+  border-radius: 11px;
+  z-index: 5;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0 / 22%) 2px 2px 30px 3px;
+  opacity: 1;
+  overflow: hidden;
+  width: 70%;
+  margin: 57px auto 0px;
+  padding: 15px;
+  position: absolute;
+  top: 30px;
+  left: 15%;
+}
+
+#location-popup-heading {
+  font-size: 24px;
+  padding: 20px 15px;
+  font-family: BrandonTextWeb-Medium, "Helvetica Neue", Helvetica, Roboto, Arial,
+    sans-serif;
+  font-weight: 500;
+}
+
+#location-popup-city {
+  padding-top: 30px;
+  padding-left: 15px;
+}
+
+#location-popup-city-header {
+  color: rgb(163, 163, 163);
+  font-family: BrandonTextWeb-Medium, "Helvetica Neue", Helvetica, Roboto, Arial,
+    sans-serif;
+  font-size: 15px;
+}
+
+#top-city-locations {
+  display: flex;
+  margin: 20px 0px 50px 20px;
+}
+
+#top-city-locations > div {
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+#top-city-locations > div > div {
+  margin-top: 10px;
+  font-family: BrandonTextWeb-Bold, "Helvetica Neue", Helvetica, Roboto, Arial,
+    sans-serif;
+  font-size: 15px;
+}
+
+#top-city-locations > div > img {
+  filter: contrast(0);
+}
+
+#location-popup div ul {
+  display: flex;
+  padding: 0px;
+  flex-wrap: wrap;
+}
+
+#location-popup div ul li {
+  list-style: none;
+  width: 14%;
+  text-align: center;
+  padding: 10px 0px;
+  font-size: 15px;
+}
+
+#location-popup div ul li a {
+  text-decoration: none;
+  color: black;
+  font-family: BrandonTextWeb-Medium, "Helvetica Neue", Helvetica, Roboto, Arial,
+    sans-serif;
+} 

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://static.cure.fit/assets/images/favicon-modified.png" type="image/x-icon">
+    <link rel="stylesheet" href="goto.css">
+    <script src="https://kit.fontawesome.com/b169d8feab.js" crossorigin="anonymous"></script>
+    <title data-rh="true">cult.fit - health food | fitness | meditation</title>
+    <style>
+        .main-div {
+            width: 100%;
+            margin-top: 60px;
+            height: auto;
+            display: grid;
+            grid-gap: 30px;
+            grid-template-columns: 63% 35%;
+        }
+
+        .show-product {
+            display: grid;
+            grid-template-columns: 47% 47%;
+            grid-gap: 20px;
+            padding: 20px;
+            margin-left: 100px;
+            height: 20%;
+            width: 120%;
+        }
+
+        .show-product>div {
+            display: grid;
+            border-radius: 10px;
+            height: 200px;
+            grid-template-columns: 40% 50%;
+            grid-gap: 5px;
+            box-shadow: 2px 2px 2px 2px rgb(167, 163, 163);
+        }
+
+        .show-product>div:hover {
+            border: 1px solid rgb(94, 90, 90);
+            transition: 0.4s;
+        }
+
+        .show-product>div>div>img {
+            width: 90%;
+            border-radius: 10px;
+            height: 198px;
+        }
+
+        #plusminus {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            border: 2px solid rgb(66, 27, 40);
+            width: 60%;
+            padding: 6px;
+            padding-left: 30px;
+            border-radius: 25px;
+        }
+
+        #plus,
+        #minus {
+            cursor: pointer;
+            font-weight: 800;
+            color: rgb(83, 24, 243);
+        }
+
+        #plus:active,
+        #minus:active {
+            cursor: progress;
+            font-weight: 500;
+        }
+
+        #removeitem {
+            width: 100%;
+            border: 2px solid black;
+            font-size: 17px;
+            border-radius: 25px;
+            cursor: pointer;
+            background-color: rgb(247, 235, 129);
+            margin-top: 15px;
+        }
+
+        #removeitem:hover {
+            align-items: bottom;
+        }
+
+        .show-price {
+            padding: 20px;
+        }
+
+        .show-price>div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #checkbtn {
+            padding: 5px;
+            float: right;
+            width: 30%;
+            margin-top: 20px;
+            border: 2px solid black;
+            cursor: pointer;
+            height: 40px;
+            font-weight: 700;
+            background-color: rgb(211, 211, 90);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container" id="blur">
+        <div id="nav-bar">
+            <nav>
+                <div class="nav-grid">
+                    <div id="logo">
+                        <a href="../Cultfit-project/Home.html">
+                            <div id="logo-img">
+                                <img src="https://static.cure.fit/assets/images/curefit-v-man.svg" alt="" width="38px">
+                            </div>
+                        </a>
+                        <a href="#">
+                            <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/image/header-web/cult2.svg"
+                                alt="">
+                        </a>
+
+                    </div>
+                    <div id="nav-links">
+                        <ul>
+                            <li><a href="#">labtests</a></li>
+                        </ul>
+                    </div>
+                    <div id="nav-bar-right">
+                        <div id="nav-bar-right-items">
+                            <div id="location" onclick="displayLocation(id)">
+                                <a href="#location">
+                                    <div id="location-circle"></div>
+                                </a>
+                                <a href="#location">
+                                    <div>Hyderabad</div>
+                                </a>
+                            </div>
+                            <div id="login">
+                                <div id="login-logo">
+                                    <a href="#login" onclick="fetchLoginPage()"><img
+                                            src="https://static.cure.fit/assets/images/user-image.svg" alt=""></a>
+                                </div>
+                                <a href="#login" onclick="fetchLoginPage()">
+                                    <div id="login-text">Login</div>
+                                </a>
+                            </div>
+                            <div id="cart">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- login-page -->
+
+    <div id="login-page">
+        <div id="close-button">
+            <button onclick="window.location.href = 'cultsport.html'"><span>X</span></button>
+        </div>
+        <div id="login-logo-popup">
+            <div><img src="https://static.cure.fit/assets/images/curefit_login_logo.svg" alt=""></div>
+            <img src="https://static.cure.fit/assets/images/cult_name.svg" alt="">
+        </div>
+        <div id="login-input-container">
+            <div id="login-input">Phone Number<br />
+                <input type="number" placeholder="Enter your mobile number" id="login-phone">
+            </div>
+            <div id="login-input">Password<br />
+                <input type="password" placeholder="Enter your Password" id="login-password">
+                <i class="far fa-eye-slash" id="togglePassword" onclick="showHidePassword(id)"></i>
+            </div>
+        </div>
+        <div id="submit-login">
+            <button class="input-login-box" onclick="verifyLogin()">Continue</button>
+        </div>
+        <div class="TnC-check">
+            <div>By Continuing you agree to the
+                <a href="https://static.cult.fit/terms_cult.html" target="_blank">Terms of Services</a>
+                and <a href="https://static.cult.fit/privacy_cult.html" target="_blank">Privacy policy</a>
+            </div>
+        </div>
+        <div>
+            <div id="login-with-gmail" onclick="window.location.href = '../Cultfit-project/Signup.html'">SIGN UP
+            </div>
+        </div>
+    </div>
+
+
+    <!-- cart-slde-bar -->
+
+    <div class="Cart-container">
+        <div id="cart-heading-box">
+            <div>Your Cart</div>
+            <div><img src="https://static.cure.fit/assets/images/modal-close.svg" alt="" onclick="hideCart()"></div>
+        </div>
+        <div id="cart-catagories">
+            <ul>
+                <li><a href="#" onclick="underline(id)" id="labtests">lab tests</a></li>
+                <li><a href="#" onclick="underline(id)" id="eatfit">Eatfit</a></li>
+                <li><a href="#" onclick="underline(id)" id="wholefit">Wholefit</a></li>
+                <li><a href="#" onclick="underline(id)" id="cultgear">Cultgear</a></li>
+            </ul>
+        </div>
+        <div id="cart-img">
+            <img id="cart-img-1"
+                src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco/image/home/empty-cart%403x.jpg"
+                alt="">
+        </div>
+        <div id="cart-status">Your cart is empty</div>
+        <div id="cart-description">Looks like you haven't made any purchases yet</div>
+        <div id="cart-back-menu">
+            <a href="#store">
+                <img src="https://static.cure.fit/assets/images/left-arrow-icon-white.svg" alt="">
+                Back to menu
+            </a>
+        </div>
+    </div>
+
+
+
+    <!-- nav-popup-links -->
+
+    <div class="links-container">
+        <div id="dropdown-links">
+            <div id="grid-links">
+                <div>
+                    <a href="../vishal_live/live.html">
+                        <img src="https://static.cure.fit/assets/images/Livefit.svg" alt="" width="38px">
+                        <div>
+                            <p>LIVE</p>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="../Cultfit-project/home_cult_cultCenters.html">
+                        <img src="https://static.cure.fit/assets/images/cult-icon.svg" alt="" width="38px">
+                        <div>
+                            <p>CULT</p>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="../Cultfit-project/mindfull.html">
+                        <img src="https://static.cure.fit/assets/images/mind-icon.svg" alt="" width="38px">
+                        <div>
+                            <p>MIND</p>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="online_consult.html">
+                        <img src="https://static.cure.fit/assets/images/carefit-blk.svg" alt="" width="38px">
+                        <div>
+                            <p>CARE</p>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="cultsport.html">
+                        <img src="https://static.cure.fit/assets/images/store-icon.svg" alt="" width="38px">
+                        <div>
+                            <p>STORE</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <!-- Location popup bar -->
+            
+            <div id="location-popup">
+                <div id="location-popup-heading">Select your Location</div>
+                <div id="location-popup-city">
+                    <div id="location-popup-city-header">POPULAR CITY</div>
+                    <div id="top-city-locations">
+                        <div onclick="locationUpdate(id)" id="Bangalore">
+                            <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_50,h_50,ar_1/dpr_2/image/cities/blr_new.png"
+                                width="60px" alt="">
+                            <div>Bangalore</div>
+                        </div>
+                        <div onclick="locationUpdate(id)" id="Delhi NCR">
+                            <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_50,h_50,ar_1/dpr_2/image/cities/ncr_new.png"
+                                width="60px" alt="">
+                            <div>Delhi NCR</div>
+                        </div>
+                        <div onclick="locationUpdate(id)" id="Hyderabad">
+                            <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_50,h_50,ar_1/dpr_2/image/cities/hyd_new.png"
+                                width="60px" alt="">
+                            <div>Hyderabad</div>
+                        </div>
+                        <div onclick="locationUpdate(id)" id="Mumbai">
+                            <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_50,h_50,ar_1/dpr_2/image/cities/mumbai_selected.png"
+                                width="60px" alt="">
+                            <div>Mumbai</div>
+                        </div>
+                    </div>
+                    <div id="location-popup-city-header">OTHER CITY</div>
+                    <div>
+                        <ul>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Chennai">Chennai</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Visakhapatnam">Visakhapatnam</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Jaipur">Jaipur</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Vadodara">Vadodara</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Pune">Pune</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Kolkata">Kolkata</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Ahmedabad">Ahmedabad</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Mysore">Mysore</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Chandigarh Tricity">Chandigarh Tricity</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Kota">Kota</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Kochi">Kochi</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Ludhiana">Ludhiana</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Surat">Surat</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Jammu">Jammu</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Amritsar">Amritsar</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Indore">Indore</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Coimbatore">Coimbatore</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Manglore">Manglore</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Bhopal">Bhopal</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Nagpur">Nagpur</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Kanpur">Kanpur</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Agra">Agra</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Lucknow">Lucknow</a></li>
+                            <li><a href="#" onclick="locationUpdate(id)" id="Other">Other</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!--------------- User Information ---------------->
+            
+            <div id="user-info-popup">
+                <div onclick="window.location.href ='../Cultfit-project/userProfile.html'"><i class="fas fa-user"></i> Profile
+                </div>
+                <hr>
+                <div onclick="window.location.href ='../Cultfit-project/userSupport.html'"><i class="fas fa-headset"></i>
+                    Support</div>
+                <hr>
+                <div onclick="window.location.href ='../Cultfit-project/userAccount.html'"><i class="fas fa-cog"></i> Account
+                </div>
+                <hr>
+                <div onclick="logout()"><i class="fas fa-sign-out-alt"></i> Log out</div>
+            </div>
+
+    <!-- MIDDLE -->
+    <div class="main-div">
+        <div id="show-product" class="show-product">
+
+        </div>
+        <div id="show-price" class="show-price">
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <div id="footer">
+        <div id="footer-container">
+            <div id="footer-part-1">
+                <div id="footer-details">
+                    <div><img src="https://static.cure.fit/assets/images/cult-logo-white.svg" alt="" width="126"
+                            height="42"></div>
+                    <div class="description">
+                        At cult.fit, we make group workouts fun, daily food healthy & tasty, mental fitness easy
+                        with yoga & meditation, and medical & lifestyle care hassle-free. #BeBetterEveryDay
+                    </div>
+                </div>
+
+                <ul>
+                    <li><a href="#" target="_blank">CONTACT US</a></li>
+                    <li><a href="#" target="_blank">BLOG</a></li>
+                    <li><a href="#" target="_blank">PARTNER.FIT</a></li>
+                    <li><a href="#" target="_blank">TALKS</a></li>
+                    <li><a href="#" target="_blank">CAREERS</a></li>
+                </ul>
+
+                <ul>
+                    <li><a href="#" target="_blank">CULTFIT FOR BUSINESSES</a></li>
+                    <li><a href="#" target="_blank">CULT FRANCHISE</a></li>
+                    <li><a href="#" target="_blank">CULT PASS NETWORK</a></li>
+                    <li><a href="#" target="_blank">CORPORATE PARTNERSHIPS</a></li>
+                </ul>
+
+                <ul>
+                    <li class="footer-app-information"><img src="https://static.cure.fit/assets/images/app-store.svg"
+                            alt="" width="80%" onclick="applestore()"></li>
+                    <li class="footer-app-information"><img src="https://static.cure.fit/assets/images/play-store.svg"
+                            alt="" width="80%" onclick="playsotre()"></li>
+                </ul>
+            </div>
+
+            <div id="important-links">
+                <div>RELATED SEARCHES</div>
+                <hr color="#A2A2A2">
+                <div id="important-links-list">
+                    <ul>
+                        <li><a href="#">Gym Near Me</a></li>
+                        <li><a href="#">Consult Nutritionist Online</a></li>
+                        <li><a href="#">Chest Exercises at Home</a></li>
+                        <li><a href="#">Stress Management</a></li>
+                        <li><a href="#">Mindfulness Meditation</a></li>
+                        <li><a href="#">Gyms in Mumbai</a></li>
+                        <li><a href="#">Gyms in Kolkata</a></li>
+                        <li><a href="#">Home Workouts</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Online Personal Training</a></li>
+                        <li><a href="#">Consult Gynecologist Online</a></li>
+                        <li><a href="#">Fat Burning Exercises</a></li>
+                        <li><a href="#">Yoga Asanas</a></li>
+                        <li><a href="#">Yoga Nidra</a></li>
+                        <li><a href="#">Gyms in Delhi</a></li>
+                        <li><a href="#">Gyms in Ahmedabad</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Online Doctor Consultation</a></li>
+                        <li><a href="#">Diagnostic tests</a></li>
+                        <li><a href="#">Six Pack Workout</a></li>
+                        <li><a href="#">Meditation Music</a></li>
+                        <li><a href="#">Dermatologist online</a></li>
+                        <li><a href="#">Gyms in Pune</a></li>
+                        <li><a href="#">Gyms in Chandigarh</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Therapist consultation</a></li>
+                        <li><a href="#">Food Near Me</a></li>
+                        <li><a href="#">Yoga Postures for Beginners</a></li>
+                        <li><a href="#">Pranayama</a></li>
+                        <li><a href="#">Othopedist doctor near me</a></li>
+                        <li><a href="#">Gyms in Hydrabad</a></li>
+                        <li><a href="#">Gyms in Indore</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Online Fitness Classes</a></li>
+                        <li><a href="#">Healthy Recipes</a></li>
+                        <li><a href="#">Surya Namaskar for Beginners</a></li>
+                        <li><a href="#">Bedtime Stories for Kids</a></li>
+                        <li><a href="#">Manchow Soup</a></li>
+                        <li><a href="#">Gyms in Chennai</a></li>
+                        <li><a href="#">Gyms in Coimbatore</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Consult Cardiologist Online</a></li>
+                        <li><a href="#">Reduce Belly Fat</a></li>
+                        <li><a href="#">Yoga for Stress Relief</a></li>
+                        <li><a href="#">Meditation in Hindi</a></li>
+                        <li><a href="#">Badam Milk</a></li>
+                        <li><a href="#">Gyms in Jaipur</a></li>
+                        <li><a href="#">Gyms in Bangalore</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div id="contact-links">
+                    <div><a href="#">Contact us</a></div>
+                    <div><a href="#">FAQ</a></div>
+                    <div><a href="#">Terms and Condition</a></div>
+                    <div><a href="#">Privacy Policy</a></div>
+                    <div><a href="#">Refund Policy</a></div>
+                </div>
+                <div id="icons">
+                    <a href="https://www.youtube.com/channel/UCSE72IaHOL-1Tv-m3JHE4Cg" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/cultfitOfficial/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/cultfitOfficial" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/BeCureFit/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--------------- User Information ---------------->
+
+    <div id="user-info-popup">
+        <div onclick="window.location.href ='../Cultfit-project/userProfile.html'"><i class="fas fa-user"></i>
+            Profile</div>
+        <hr>
+        <div onclick="window.location.href ='../Cultfit-project/userSupport.html'"><i class="fas fa-headset"></i>
+            Support</div>
+        <hr>
+        <div onclick="window.location.href ='../Cultfit-project/userAccount.html'"><i class="fas fa-cog"></i>
+            Account</div>
+        <hr>
+        <div onclick="logout()"><i class="fas fa-sign-out-alt"></i> Log out</div>
+    </div>
+
+    <script src="src.js"></script>
+</body>
+
+</html>
+<script>
+    let total = 0;
+    if (localStorage.getItem('store') == null) {
+        let parent = document.getElementById('show-product')
+        let h1 = document.createElement('h1')
+        h1.innerHTML = 'No Products In Cart!!'
+        parent.append(h1)
+    } else {
+        let store = JSON.parse(localStorage.getItem('store'))
+
+        store.forEach(function (el) {
+            //console.log(el)
+            let parent = document.getElementById('show-product')
+            let div = document.createElement('div')
+            let img = document.createElement('img')
+            let name = document.createElement('h4')
+            let desc = document.createElement('p')
+            let price = document.createElement('h5')
+            total += el.price * el.qty
+            img.src = el.image;
+            name.innerHTML = "full body checkup";
+            desc.innerHTML = "Report Ready in 36Hrs";
+            desc.setAttribute('style', 'color:gray;margin-top:5px;font-size:12px;')
+            price.innerHTML = "price: " + el.price;
+            price.setAttribute('style', 'margin-top:5px;margin-bottom:5px;')
+            let div1 = document.createElement('div')
+            div1.append(img)
+            let div2 = document.createElement('div')
+            let qty = document.createElement('div')
+            let minus = document.createElement('div')
+            let tqty = document.createElement('div')
+            let plus = document.createElement('div')
+            minus.innerHTML = '-'
+            minus.id = 'minus'
+            plus.innerHTML = '+'
+            plus.onclick = function () {
+                increase(el);
+            }
+            minus.onclick = function () {
+                decrease(el);
+            }
+            let removeitem = document.createElement('button')
+            removeitem.innerHTML = 'Remove From Cart'
+            removeitem.id = 'removeitem'
+            removeitem.onclick = function () {
+                removeitems(el);
+            }
+            plus.id = 'plus'
+            tqty.innerHTML = el.qty
+            qty.id = 'plusminus'
+            qty.append(minus, tqty, plus)
+
+            div2.append(name, desc, price, qty, removeitem)
+            div2.style.paddingTop = '10px'
+            div.append(div1, div2)
+            parent.append(div)
+        });
+
+
+
+
+
+        // Show price
+        let discount = 0;
+        let parent1 = document.getElementById('show-price')
+
+        let ele = document.createElement('div')
+        ele.innerHTML = "Total Price"
+        let ele1 = document.createElement('div')
+        ele1.innerHTML = total
+        let element1 = document.createElement('div')
+        element1.setAttribute('style', 'margin-bottom:10px')
+        element1.append(ele, ele1)
+
+        let elem = document.createElement('div')
+        elem.innerHTML = "Discount"
+        let elem1 = document.createElement('div')
+        elem1.innerHTML = discount
+        let element2 = document.createElement('div')
+        element2.setAttribute('style', 'margin-bottom:10px')
+        element2.append(elem, elem1)
+
+        let eleme = document.createElement('div')
+        eleme.innerHTML = "Total Amount"
+        /* let eleme1 = document.createElement('div')
+        eleme1.innerHTML = total - discount */
+        let element3 = document.createElement('div')
+        element3.setAttribute('style', 'margin-bottom:10px')
+        element3.append(eleme)
+
+
+
+         let hr1 = document.createElement('hr')
+        hr1.setAttribute('style', 'height:2px;background-color:gray;width:100%;')
+        let hr2 = document.createElement('hr')
+        hr2.setAttribute('style', 'height:2px;background-color:gray;width:100%;')
+         /* let promocode = document.createElement('div')
+        let promo = document.createElement('input')
+        promo.placeholder = "Enter Promo-Code Ex-MASAI30"
+        promo.id = 'promo' 
+         let promobtn = document.createElement('button')
+        promobtn.textContent = "APPLY"
+        promobtn.id = 'promobtn'
+        let count = 0; */
+        
+
+        let checkbtn = document.createElement('button')
+        checkbtn.textContent = "CHECKOUT"
+        checkbtn.id = 'checkbtn'
+        checkbtn.onclick = function () {
+            alert('checked')
+        }
+        
+        parent1.append(element1, element2, hr1, element3, hr2, checkbtn)
+
+    }
+    function increase(el) {
+        let store = JSON.parse(localStorage.getItem('store'))
+        for (var i = 0; i < store.length; i++) {
+            if (store[i].id == el.id) {
+                store[i].qty++;
+                localStorage.setItem('store', JSON.stringify(store))
+                window.location.href = 'addcarts.html'
+                break;
+            }
+        }
+    }
+    function decrease(el) {
+        if (el.qty > 1) {
+            let store = JSON.parse(localStorage.getItem('store'))
+            for (var i = 0; i < store.length; i++) {
+                if (store[i].id == el.id) {
+                    store[i].qty--;
+                    localStorage.setItem('store', JSON.stringify(store))
+                    window.location.href = 'addcarts.html'
+                    break;
+                }
+            }
+        } else {
+            let store = JSON.parse(localStorage.getItem('store'))
+            store.splice(i, 1)
+            localStorage.setItem('store', JSON.stringify(store))
+            window.location.href = 'addcarts.html'
+        }
+    }
+    function removeitems(el) {
+        let store = JSON.parse(localStorage.getItem('store'))
+        for (var i = 0; i < store.length; i++) {
+            if (store[i].id == el.id) {
+                store.splice(i, 1)
+                localStorage.setItem('store', JSON.stringify(store))
+                window.location.href = 'addcarts.html'
+                break;
+            }
+        }
+    }
+
+
+</script>
