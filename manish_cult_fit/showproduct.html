@@ -615,7 +615,7 @@
                 store = JSON.parse(localStorage.getItem("store"));
                 let found = false;
                 for (var o = 0; o < store.length; o++) {
-                    if (store[o].id == obj.id && store[0].size == obj.size) {
+                    if (store[o].id == obj.id && store[o].size == obj.size) {
                         store[o].qty += 1;
                         localStorage.setItem("store", JSON.stringify(store));
                         found = true;
@@ -662,7 +662,7 @@
                 store = JSON.parse(localStorage.getItem("store"));
                 let found = false;
                 for (var o = 0; o < store.length; o++) {
-                    if (store[o].id == obj.id && store[0].size == obj.size) {
+                    if (store[o].id == obj.id && store[o].size == obj.size) {
                         store[o].qty += 1;
                         localStorage.setItem("store", JSON.stringify(store));
                         found = true;
