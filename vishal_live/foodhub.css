@@ -647,7 +647,7 @@ body {
   margin-right: 2px;
   margin-bottom: 5px;
 }
-*/ #footer {
+#footer {
   width: 100%;
   height: fit-content;
   background-color: black;

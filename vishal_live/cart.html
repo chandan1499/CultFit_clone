@@ -267,8 +267,8 @@
         <div class="billing">
             <div class="address-part">
                 <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <div class="addressis">Please Add Address</div>
-                <div class="Modify">Modify</div>
+                <div class="addressis" id="addressdisplay">Please Add Address</div>
+                <div class="Modify" onclick="addressadd()">Modify</div>
             </div>
             <div class="adreshr">
                 <hr>
@@ -288,6 +288,9 @@
                     <p class="tp-is" id="to-p-is">₹ 3316</p>
 
                 </div>
+                <div id="checkout" class="checkout" onclick="checkout()">
+                    <button type="submit" class="checkout-btn">Checkout</button>
+                </div>
 
 
             </div>
@@ -296,6 +299,14 @@
         </div>
     </div>
     <!-- displat itm -->
+    <!-- address taking part -->
+    <div class="address-taking">
+
+        <p>Add Your Address</p>
+        <textarea name="address" id="addres-take-part" cols="50" rows="10"></textarea><br>
+        <button type="submit" onclick="addthisadd()" id="submitbtn"> Set Address</button>
+    </div>
+    <!-- address taking part -->
 
     <!-- Footer -->
 
@@ -456,10 +467,18 @@
         name_remo.append(cname, remove)
 
         // outbox.ap(name_remo)
+        let f_name_n_p = document.createElement('div')
+        f_name_n_p.setAttribute("class", 'flexis')
         //
         let d_name = document.createElement('p')
         d_name.setAttribute('class', 'd-name')
         d_name.innerHTML = element.name
+
+        d_price = document.createElement('p')
+        d_price.setAttribute('class', 'd-price')
+        d_price.innerHTML = `<i class="fas fa-rupee-sign"></i> ${element.price}`
+
+        f_name_n_p.append(d_name, d_price)
 
         // outbox.append(d_name)
 
@@ -513,7 +532,7 @@
         inner_q_box.append(plus, itemis, minus)
         q_count_box.append(inner_q_box)
         f_q_div.append(qu_heading, q_count_box)
-        fod_dit.append(name_remo, d_name, f_rating, f_q_div)
+        fod_dit.append(name_remo, f_name_n_p, f_rating, f_q_div)
         outbox.append(imgdiv, fod_dit)
         par.append(outbox)
 
@@ -664,6 +683,20 @@
         }
     }
 
+    //   addressadd
+    function addressadd() {
+
+
+    }
+    function addthisadd() {
+        let addressis = document.getElementById('addressdisplay')
+
+        let inputadd = document.getElementById('addres-take-part').nodeValue
+
+        addressis.innerHTML = inputadd
+    }
+
+    // login
     function fetchLoginPage() {
         var blur = document.getElementById('blur');
         blur.classList.toggle('active');
