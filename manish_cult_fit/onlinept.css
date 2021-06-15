@@ -668,6 +668,11 @@ hr {
   color: white;
   font-weight: 600;
 }
+.cardcarousel main span {
+  font-size: 40px;
+  margin: 0px 5px;
+  cursor: pointer;
+}
 .keyfeatures {
   padding: 30px;
   margin-top: 70px;
