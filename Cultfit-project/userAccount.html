@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b169d8feab.js" crossorigin="anonymous"></script>
     <title>Profile</title>
+    <link rel="icon" href="https://static.cure.fit/assets/images/favicon-modified.png" type="image/x-icon">
     <style>
         body {
             margin: 0;
@@ -376,6 +377,12 @@
 
         var user = document.getElementById('fetchUserName');
         user.innerHTML = `${check.name}`;
+
+        let imgSrc = check.img;
+        if(imgSrc != undefined){
+            let img = document.getElementById('profile-picture');
+            img.src = imgSrc;
+        }
     }
 
     function userLogOut() {
@@ -397,6 +404,29 @@
             return;
         }
 
+        if(newPass != conNewPass){
+            alert("New password and confirm password Should be the same!");
+            return;
+        }
+        else if(check.password != oldPass){
+            alert("Old password is wrong!");
+            return;
+        }
+        else{
+            alert("Password changed successfully!");
+        }
+
+        let data = JSON.parse(localStorage.getItem('cultFitUsers'));
+
+        let userData = data[check.number];
+        userData.password = newPass;
+
+        data[check.number] = userData;
+        localStorage.setItem('cultUserName', JSON.stringify(userData));
+        localStorage.setItem('cultFitUsers', JSON.stringify(data));
+
+        userLogOut();
+        // window.location.href = "userAccount.html";
     }
 </script>
 

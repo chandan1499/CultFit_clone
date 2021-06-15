@@ -64,7 +64,7 @@ var x = setInterval(function() {
             }
     
             localStorage.setItem('cultUserName', JSON.stringify(currentUser));
-            window.location.href = "cultsport.html";
+            window.location.href = "online_consult.html";
         }
     
     
@@ -100,7 +100,7 @@ var x = setInterval(function() {
                     else {
                         alert("User already logged in");
                     }
-                    window.location.href = "cultsport.html";
+                    window.location.href = "online_consult.html";
                 }
                 else {
                     alert("Invalid Credentials!");

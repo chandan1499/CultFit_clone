@@ -157,12 +157,7 @@ function verifyLogin() {
             var login = document.getElementById('login-text');
 
             if (login.innerHTML == "Login") {
-                let currentUser = {
-                    name: data[phone].name,
-                    email: data[phone].email,
-                    password: data[phone].password,
-                    number: data[phone].number
-                }
+                let currentUser = data[phone];
 
                 localStorage.setItem('cultUserName', JSON.stringify(currentUser));
             }
