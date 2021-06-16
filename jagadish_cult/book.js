@@ -1,38 +1,3 @@
-var countDownDate = new Date("Jan 6, 2022 20:23:25").getTime();
-var x = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  var span = document.createElement('span')
-  span.id = " : ";
-  span.style.color = 'gray';
-  document.getElementById("timercountdown").innerHTML =hours+ span.id + minutes+ span.id + seconds;
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-
-
-
-    var rotateDropDown = -180;
-    function dropdowneffect(x) {
-        var img = document.getElementById(x);
-        img.style.transform = `rotate(${rotateDropDown}deg)`;
-        var dropdown = document.getElementById('dropdown-links');
-        if (rotateDropDown == -180) {
-            rotateDropDown = 0;
-            dropdown.style.display = "inline";
-        }
-        else {
-            rotateDropDown = -180;
-            dropdown.style.display = "none";
-            console.log("hidden");
-        }
-    }
-
 // ----------- login -----------\\
 
         let clickCount = 0;
