@@ -136,7 +136,6 @@ a {
   height: 100%;
   margin: auto;
   align-items: center;
-  justify-content: center;
 }
 
 #nav-links ul {
@@ -445,11 +444,6 @@ a {
         opacity: 0.5;
     }
 
-    #user-info-popup hr {
-      margin: 5px auto;
-      width: 100%;
-    }
-
     @media screen and (max-width: 780px) {
 
         #footer-container {
@@ -649,7 +643,7 @@ a {
   width: 80px;
 }
 
-#grid-links div:nth-child(4) a div p {
+#grid-links div:nth-child(2) a div p {
   color: #fc2e71;
 }
 
@@ -882,11 +876,6 @@ a {
   width: 100%;
   height: fit-content;
   background-color: black;
-}
-
-#footer hr {
-  width: 100%;
-  margin: 5px auto;
 }
 
 #footer-container {

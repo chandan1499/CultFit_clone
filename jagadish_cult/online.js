@@ -165,21 +165,3 @@ var acc = document.getElementsByClassName("accordion");
             }
         });
     }
-
-
-
-    var rotateDropDown = -180;
-    function dropdowneffect(x) {
-        var img = document.getElementById(x);
-        img.style.transform = `rotate(${rotateDropDown}deg)`;
-        var dropdown = document.getElementById('dropdown-links');
-        if (rotateDropDown == -180) {
-            rotateDropDown = 0;
-            dropdown.style.display = "inline";
-        }
-        else {
-            rotateDropDown = -180;
-            dropdown.style.display = "none";
-            console.log("hidden");
-        }
-    }

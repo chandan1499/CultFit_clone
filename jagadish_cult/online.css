@@ -163,7 +163,6 @@ a {
   height: 100%;
   margin: auto;
   align-items: center;
-  justify-content: center;
 }
 
 #nav-links ul {
@@ -474,11 +473,6 @@ a {
         opacity: 0.5;
     }
 
-    #user-info-popup hr {
-      width: 100%;
-      margin: 5px auto;
-    }
-
     @media screen and (max-width: 780px) {
 
         #footer-container {
@@ -679,7 +673,7 @@ a {
   width: 80px;
 }
 
-#grid-links div:nth-child(4) a div p {
+#grid-links div:nth-child(2) a div p {
   color: #fc2e71;
 }
 
@@ -769,7 +763,7 @@ a {
 .card > div {
   height: auto;
 }
- .card > a > div :hover {
+ .card > a > div:hover {
    transition: 0.5s;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
   margin: 0.5%;
@@ -1013,11 +1007,6 @@ p {
   width: 100%;
   height: fit-content;
   background-color: black;
-}
-
-#footer hr {
-  width: 100%;
-  margin: 5px auto;
 }
 
 #footer-container {
