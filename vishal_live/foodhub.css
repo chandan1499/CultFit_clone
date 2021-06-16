@@ -621,6 +621,9 @@ body {
   grid-template-columns: auto auto;
   padding: 3%;
 }
+.ditels i {
+  margin-left: 5px;
+}
 .ditels > div {
   margin: 10px;
   width: 49%;

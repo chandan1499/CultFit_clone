@@ -8,7 +8,7 @@ body,html {
 
 .container#blur.active {
     filter: blur(5px);
-    position: fixed;
+    position: absolute;
     pointer-events: none;
     user-select: none;
 }

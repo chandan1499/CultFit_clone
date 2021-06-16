@@ -481,156 +481,9 @@
 
 </html>
 <script>
-<<<<<<< HEAD
-  // display cart item
-
-  let data = JSON.parse(localStorage.getItem("cartfood"));
-  // console.log(data)
-  let par = document.getElementById("contanier");
-  let totalbill = 0;
-  data.forEach((element) => {
-    // alert(element.name)
-    totalbill += +element.price;
-    let outbox = document.createElement("div");
-    outbox.setAttribute("class", "outer-boxa flexis");
-    outbox.setAttribute("id", `d-${element.id}`);
-
-    let imgdiv = document.createElement("div");
-    imgdiv.style.backgroundImage = `url("${element.image}")`;
-    imgdiv.setAttribute("class", "imgdiv ");
-    // outbox.append(imgdiv)
-
-    let fod_dit = document.createElement("div");
-    fod_dit.setAttribute("class", "food-dit");
-    //
-    let name_remo = document.createElement("div");
-    name_remo.setAttribute("class", "flexis");
-
-    let cname = document.createElement("p");
-    cname.innerHTML = "CULTFOOD";
-    cname.setAttribute("class", "clhading");
-
-    let remove = document.createElement("p");
-    remove.setAttribute("class", "f-remove");
-    remove.innerHTML = "X";
-    remove.onclick = function () {
-      removediv(itm_countis, totalbill, element.id);
-    };
-    name_remo.append(cname, remove);
-
-    // outbox.ap(name_remo)
-    let f_name_n_p = document.createElement("div");
-    f_name_n_p.setAttribute("class", "flexis");
-    //
-    let d_name = document.createElement("p");
-    d_name.setAttribute("class", "d-name");
-    d_name.innerHTML = element.name;
-
-    d_price = document.createElement("p");
-    d_price.setAttribute("class", "d-price");
-    d_price.innerHTML = `<i class="fas fa-rupee-sign"></i> ${element.price}`;
-
-    f_name_n_p.append(d_name, d_price);
-
-    // outbox.append(d_name)
-
-    //
-    let f_rating = document.createElement("div");
-    f_rating.setAttribute("class", "flexis");
-
-    let r_hading = document.createElement("p");
-    r_hading.setAttribute("class", "f-rat-heading");
-    r_hading.innerHTML = "Food Rating";
-
-    let ratingis = document.createElement("p");
-    ratingis.setAttribute("class", "f-rating");
-    ratingis.innerHTML = `${element.rating} <i class="far fa-star"></i>`;
-
-    f_rating.append(r_hading, ratingis);
-    // outbox.append(f_rating)
-    //
-    let f_q_div = document.createElement("div");
-    f_q_div.setAttribute("class", "flexis");
-
-    let qu_heading = document.createElement("p");
-    qu_heading.setAttribute("class", "quantity");
-    qu_heading.innerHTML = "Quantity";
-
-    let q_count_box = document.createElement("div");
-    q_count_box.setAttribute("class", "quantity-count-div1 ");
-
-    let inner_q_box = document.createElement("div");
-    inner_q_box.setAttribute("class", "quantity-count-div2 flexis");
-
-    let plus = document.createElement("p");
-    plus.innerHTML = `<i class="fas fa-plus"></i>`;
-    plus.onclick = function () {
-      iteminc(itm_countis, totalbill, element.id);
-    };
-
-    let itemis = document.createElement("p");
-    itemis.innerHTML = "1";
-    itemis.setAttribute("id", `p-${element.id}`);
-    let itm_countis = itemis.innerHTML;
-
-    let minus = document.createElement("p");
-    minus.innerHTML = `<i class="fas fa-minus"></i>`;
-    minus.onclick = function () {
-      itemdec(itm_countis, totalbill, element.id);
-    };
-    // let hr = document.createElement('hr')
-    // hr.setAttribute("id", `hr-${element.id}`)
-
-    inner_q_box.append(plus, itemis, minus);
-    q_count_box.append(inner_q_box);
-    f_q_div.append(qu_heading, q_count_box);
-    fod_dit.append(name_remo, f_name_n_p, f_rating, f_q_div);
-    outbox.append(imgdiv, fod_dit);
-    par.append(outbox);
-  });
-
-  //billing part
-  let totalpay = document.getElementById("total-p");
-  totalpay.innerHTML = `<i class="fas fa-rupee-sign"></i> ${totalbill}`;
-
-  let dicount = document.getElementById("dis-p");
-  dicount.innerHTML = `<i class="fas fa-rupee-sign"></i> ${
-    (totalbill * 35) / 100
-  }`;
-
-  let Payable = document.getElementById("to-p-is");
-  Payable.innerHTML = `<i class="fas fa-rupee-sign"></i> ${
-    (totalbill * 65) / 100
-  }`;
-
-  function removediv(coun, totalbill, id) {
-    let data = JSON.parse(localStorage.getItem("cartfood"));
-    console.log(data);
-    // let f_data = {}
-    let f_p = 0;
-    for (let k = 0; k < data.length; k++) {
-      // console.log(data[k].id)
-      if (+data[k].id == id) {
-        f_data = data[k];
-        f_p = +data[k].price;
-        break;
-      }
-    }
-    console.log(f_data, id, f_p);
-    // alert("item removed" + coun + " " + totalbill + " " + id)
-    let div = document.getElementById(`d-${id}`);
-    let p = document.getElementById(`p-${id}`);
-    let get_price = document.getElementById("total-p").innerHTML.split(" ");
-    let p_show_div = document.getElementById("total-p");
-    let totalamount = +get_price[get_price.length - 1];
-    // let hris = document.getElementById(`hr-${id}`)
-    // console.log(div, p, totalamount, p_show_div)
-    let final_am = totalamount - f_p * coun;
-    p_show_div.innerHTML = `<i class="fas fa-rupee-sign"></i> ${final_am}`;
-=======
     // display cart item
 
-    let data = JSON.parse(localStorage.getItem("store"));
+    let data = JSON.parse(localStorage.getItem("cartfood"));
     // console.log(data)
     let par = document.getElementById("contanier");
     let totalbill = 0;
@@ -738,7 +591,6 @@
     //billing part
     let totalpay = document.getElementById("total-p");
     totalpay.innerHTML = `<i class="fas fa-rupee-sign"></i> ${totalbill}`;
->>>>>>> 0ca6caed810460b4212cc095c75b83061c309e87
 
     let dicount = document.getElementById("dis-p");
     dicount.innerHTML = `<i class="fas fa-rupee-sign"></i> ${(totalbill * 35) / 100}`;
@@ -868,7 +720,7 @@
     function addthisadd() {
         let addressis = document.getElementById("addressdisplay");
 
-        let inputadd = document.getElementById("addres-take-part").nodeValue;
+        let inputadd = document.getElementById("addres-take-part").value;
 
         addressis.innerHTML = inputadd;
     }
