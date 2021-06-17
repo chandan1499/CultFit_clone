@@ -721,7 +721,7 @@
     p.textContent = 'This test will help you understand the status of your key health indicators. It helps in early detection of common chronic & lifestyle health conditions related to thyroid, diabetes, liver, kidney, heart and blood.'
     let p1 = document.createElement('p')
     let p0 = document.createElement('h3')
-    p0.id = "custprice"
+    p0.id = "shoprice"
 
     p1.textContent = '75 tests'
     p1.setAttribute("style", "margin-top:40px;font-size:18px;font-weight:400;color:gray;")
@@ -740,7 +740,7 @@
 
     btn1.textContent = 'Book Appointment'
     btn1.onclick = function () {
-        showprice(money)
+        showprice(amo)
 
 
     }
@@ -767,9 +767,9 @@
     hr1.setAttribute("style", "margin:15px;height:3px;background-color:gray;width:95%")
     show_data.append(hr1)
 
-    let money;
-    function showprice(money) {
-        var queryString = "?" + 'image' + "&" + money;
+    let amo;
+    function showprice(amo) {
+        var queryString = "?" + "name" + "&" + amo;
         window.location.href = "payment.html" + queryString;
     }
 
@@ -777,104 +777,15 @@
     queryString = queryString.substring(1);
     var queries = queryString.split("&");
     for (var i = 0; i < queries.length; i++) {
-        if (i == 0) {
+        /* if (i == 0) {
             let div = document.getElementById("show-img")
-            let image = document.createElement('img')
-            image.src = queries[i]
+            let image = document.createElement('div')
+            div.innerHTML = queries[i]
             div.append(image)
-        }
+        } */
         if (i == 1) {
-            money = queries[i]
-            let price = document.getElementById("custprice")
+            amo = queries[i]
+            let price = document.getElementById("shoprice")
             price.innerHTML = '₹ ' + queries[i]
         }
     }
-
-    // ----------login js--------- \\
-
-    function logout() {
-        let currentUser = {
-            name: "Login"
-        }
-
-        localStorage.setItem('cultUserName', JSON.stringify(currentUser));
-        window.location.href = "labtests.html";
-    }
-
-
-    function verifyLogin() {
-
-        let phone = document.getElementById('login-phone').value;
-        let password = document.getElementById('login-password').value;
-
-        let data = JSON.parse(localStorage.getItem('cultFitUsers'));
-
-        if (data == null) {
-            alert("Invalid Credentials!");
-            return;
-        }
-
-        if (data[phone] == undefined) {
-            alert("Invalid Credentials!");
-        }
-        else {
-            if (data[phone].password == password) {
-                var login = document.getElementById('login-text');
-
-                if (login.innerHTML == "Login") {
-                    let currentUser = {
-                        name: data[phone].name,
-                        email: data[phone].email,
-                        password: data[phone].password,
-                        number: data[phone].number
-                    }
-
-                    localStorage.setItem('cultUserName', JSON.stringify(currentUser));
-                }
-                else {
-                    alert("User already logged in");
-                }
-                window.location.href = "gotoitems.html";
-            }
-            else {
-                alert("Invalid Credentials!");
-            }
-        }
-
-    }
-
-    function showHidePassword(id) {
-        let input = document.getElementById('login-password');
-        let passwordType = document.getElementById(id);
-        if (input.type == 'password') {
-            input.type = "text";
-            passwordType.removeAttribute('class');
-            passwordType.setAttribute('class', 'far fa-eye');
-        }
-        else {
-            input.type = 'password';
-            passwordType.removeAttribute('class');
-            passwordType.setAttribute('class', 'far fa-eye-slash');
-        }
-    }
-    function notify(msg, status) {
-        let notification = document.getElementById('notification')
-        let para = document.createElement('p')
-        notification.setAttribute('style', "border-radius: 7px;")
-        para.innerHTML = msg
-        if (status) {
-            para.setAttribute('style', "border-radius: 7px;background-color:orange;padding:10px;font-size:20px;font-weight:600;")
-            notification.append(para)
-            setTimeout(function () {
-                notification.innerHTML = null
-            }, 2000)
-        } else {
-            para.setAttribute('style', "border-radius: 7px;background-color:green;padding:10px;font-size:20px;font-weight:600;")
-            notification.append(para)
-            setTimeout(function () {
-                notification.innerHTML = null
-            }, 2000)
-        }
-
-    }
-</script>

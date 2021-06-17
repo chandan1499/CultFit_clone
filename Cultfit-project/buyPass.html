@@ -11,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b169d8feab.js" crossorigin="anonymous"></script>
     <title>Cult Center</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&display=swap" rel="stylesheet">
     <link rel="icon" href="https://static.cure.fit/assets/images/favicon-modified.png" type="image/x-icon">
     <style rel="stylesheet" href="home.css"></style>
     <style>
@@ -594,306 +598,151 @@
             font-family: BrandonTextWeb-Medium, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
         }
 
-        #img-scroll {
-            position: relative;
-            top: 64px;
-            display: flex;
 
-
-        }
-
-        #img-scroll img {
-            width: 100vw;
-            height: auto;
-            position: relative;
-            cursor: pointer;
-        }
-
-        #img-scroll :nth-child(1) {
-            animation: scrollimg1 15s ease-in infinite;
-        }
-
-        #img-scroll :nth-child(2) {
-            animation: scrollimg2 15s ease-in infinite;
-        }
-
-        @keyframes scrollimg1 {
-            0% {
-                left: 0vw;
-            }
-
-            40% {
-                left: 0vw;
-            }
-
-            50% {
-                left: -100vw;
-            }
-
-            90% {
-                left: -100vw;
-            }
-
-            90.000001% {
-                left: 100vw
-            }
-
-            100% {
-                left: 0vw;
-            }
-        }
-
-        @keyframes scrollimg2 {
-            0% {
-                left: 0vw;
-            }
-
-            40% {
-                left: 0vw;
-            }
-
-            50% {
-                left: -100vw;
-            }
-
-            90% {
-                left: -100vw;
-            }
-
-            100% {
-                left: -200vw;
-            }
-        }
-
-
-        #img-scroll-btn {
+        /* -----------main page data css-------- */
+        .grid {
+            width: 80%;
+            margin: 80px auto;
+            grid-gap: 20px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            width: 80%;
-            margin: 70px auto 25px;
-            padding-top: 10px;
+            font-family: 'Poppins', sans-serif;
         }
 
-        #img-scroll-btn>div {
-            display: flex;
+        #left-data {
+            margin: 10px auto;
         }
 
-        #img-scroll-btn>div:nth-child(2) {
-            font-size: 30px;
-            justify-self: end;
-            cursor: pointer;
+        #right-data {
+            padding: 10px 20px;
         }
 
-        #img-ptr {
-            width: 10px;
-            height: 10px;
-            background-color: gray;
-            border-radius: 50%;
+        #pages-links {
+            font-size: 12px;
+        }
+
+        #pages-links span {
+            font-size: 15px;
             margin: 0px 5px;
             cursor: pointer;
         }
 
-        #img-ptr:hover {
-            background-color: black;
+        #pages-links span:hover {
+            border-bottom: 2px solid black;
         }
 
-        #img-scroll-right {
-            margin-left: 15px;
+        #pass-heading {
+            margin-top: 30px;
+            margin-left: 5px;
+            font-size: 35px;
+            font-weight: bold;
         }
 
-        .cult-offers {
-            width: 100vw;
-            height: fit-content;
-            background-color: rgb(88, 98, 132);
-            margin: 40px 0px;
+        #pass-price {
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 23px;
+            margin-top: 10px;
+            color: #ff3278;
+        }
+
+        #pass-price span {
+            opacity: 0.5;
+            text-decoration: line-through;
+            margin-right: 10px;
+            color: black;
+        }
+
+        #pass-button button {
+            margin-top: 20px;
+            margin-left: 5px;
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 700;
             color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            padding-bottom: 50px;
-
+            padding: 10px 40px;
+            background-color: #ff3278;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
         }
 
-        .cult-offers>div {
-            width: 80%;
-            margin: auto;
-        }
-
-        .cult-offers p {
-            text-align: center;
-        }
-
-        .offer-heading {
-            padding: 50px 0px 30px;
-            margin: 0px;
-            font-family: 'Circular-Loom !important';
-        }
-
-        .offer-heading2 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            width: 60%;
-            margin: auto;
-        }
-
-        .offer-heading2>div:nth-child(1),
-        .offer-heading2>div:nth-child(3) {
-            border-top: 1px solid white;
-            margin-top: 9px;
-        }
-
-        .offer-heading2>div:nth-child(2) {
-            justify-self: center;
-            font-size: 17px;
-            font-weight: 600;
-
-        }
-
-        .offer-type {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            width: 100%;
-            margin: 50px auto 60px;
-        }
-
-        .offer-type>div>span {
+        #offer, #offer1, #extraWithOffer {
+            margin-top: 30px;
+            margin-left: 5px;
+            font-size: 23px;
             font-weight: 600;
         }
 
-        .offer-type>div {
-            justify-self: center;
-        }
-
-        .subscription-heading {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .subscription-offers {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-column-gap: 15px;
+        #offer1 {
             margin-top: 40px;
         }
 
-        .subscription-offers>div {
-            background-color: white;
-            width: 100%;
-            border-radius: 10px;
-            /* padding: 10px; */
+        #offer-para {
+            margin-left: 5px;
+            font-size: 14px;
+        }
+
+        #extraWithOffer {
+            margin: 50px 5px 0px 0px;
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+
+        #extraWithOffer-data {
             display: flex;
-            height: 70px;
+            margin: 10px 5px 20px 0px;
         }
 
-        .offer-flex1 {
-            width: 70%;
+        #extraWithOffer-data img {
+            margin-right: 15px;
         }
 
-        .offer-flex2 {
-            width: 30%
+        #howItWorks {
+            margin-left: 5px;
+            margin-top: 50px;
+            font-size: 23px;
+            font-weight: bold;
         }
 
-        .subscription-offers>div p {
-            color: black;
-            margin: 0px;
-            padding: 15px 20px 5px;
-            text-align: left;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 600;
-            opacity: 0.8;
+        .howItWorks-data {
+            display: flex;
+            margin-left: 10px;
+            margin-top: 15px;
         }
 
-        .offer-flex1 :nth-child(2) {
-            padding: 0px 20px;
-        }
-
-        .offer-flex1 :nth-child(2) span {
-            text-decoration: line-through;
-            opacity: 0.5;
-            margin-right: 5px;
-        }
-
-        .buy-tag {
-            color: #fc2e71 !important;
-            text-align: right !important;
-            margin-top: 11px !important;
-            cursor: pointer;
-        }
-
-        .offer-headingp3 {
-            padding-top: 10px;
-            text-align: center !important;
-            opacity: 0.5;
-        }
-
-        .cult-offers h2 {
-            text-align: center;
-            padding-top: 50px;
-            padding-bottom: 0px;
-            margin: 0px;
-        }
-
-        .offer-type-select {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        #infinity {
-            font-size: 15px;
+        .howItWorks-data img {
+            width: 50px;
+            margin-right: 10px;
         }
 
         #workouts {
-            width: 80%;
-            margin: 50px auto;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 23px;
+            font-weight: bold;
+            margin-top: 50px;
+            margin-left: 5px;
         }
 
-        #workouts>div:nth-child(1) {
-            margin-bottom: 20px;
-        }
-
-        #workout-div {
+        #workouts-data {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
         }
 
-        #workout-div img {
-            border-radius: 8px;
+        #workouts-data img {
+            border-radius: 10px;
+        }
+
+        #workouts-data > div {
             cursor: pointer;
         }
 
-        #workout-name {
-            position: absolute;
-            padding: 20px;
-            font-size: 18px;
+        #workouts-data > div > div {
+            text-align: center;
         }
 
-        #quick-link {
-            margin-top: 80px;
-            font-size: 18px;
-        }
-
-        #quick-link div:nth-child(4) {
-            margin-top: 25px;
-        }
-
-        #quick-link-heading {
-            color: #33363F;
-            font-family: 'Poppins', sans-serif;
-            font-size: 24px !important;
-            margin-bottom: 25px;
-        }
-
-        #motivation-quote {
-            margin-top: 100px;
-            font-size: 70px;
-            line-height: 1.2;
-        }
-
-        #motivation-quote :nth-child(3) {
-            color: #8D93A0;
-            font-size: 40px;
-        }
-
+        
         /* ------------------ footer style --------------- */
 
 
@@ -1024,8 +873,6 @@
             display: inherit;
         }
 
-
-
         #user-info-popup div {
             cursor: pointer;
             font-family: 'Poppins', sans-serif;
@@ -1040,6 +887,9 @@
         #user-info-popup div:hover {
             opacity: 0.5;
         }
+
+        
+
 
         @media screen and (max-width: 780px) {
 
@@ -1116,7 +966,7 @@
                     </div>
                     <div id="nav-links">
                         <ul>
-                            <li><a href="#">Cult Centers</a></li>
+                            <li><a href="home_cult_cultCenters.html">Cult Centers</a></li>
                             <li><a href="home_cult_gyms.html">Gyms</a></li>
                             <li><a href="../manish_cult_fit/onlinept.html">Online PT</a></li>
                             <li><a href="../manish_cult_fit/cultsport.html">Cultsport</a></li>
@@ -1155,156 +1005,76 @@
 
         <!-------------------- Main-page-data --------------------->
 
-
-        <div id="img-scroll" onclick="window.location.href ='../vishal_live/live.html'">
-            <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_1440,ar_2880:595/dpr_2/image/vm/d4c7f869-682e-4df4-ba10-729c49042ce1.png"
-                alt="">
-            <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_1440,ar_2880:595/dpr_2/image/vm/dbfd5ec5-cfdb-4d0b-8fef-7ab684d3356d.png"
-                alt="">
-        </div>
-        <div id="img-scroll-btn">
-            <!-- <div>
-                <div id="img-ptr"></div>
-                <div id="img-ptr"></div>
-            </div> -->
-        </div>
-        <div class="cult-offers">
-            <div>
-                <p class="offer-heading">cultpass BLACK</p>
-                <div class="offer-heading2">
-                    <div></div>
-                    <div>ENJOY THE BENEFITS OF</div>
-                    <div></div>
-                </div>
-                <div class="offer-type">
-                    <div><span>Buy Now </span>start anytime</div>
-                    <div><span>Pause </span>pack anytime</div>
-                    <div><span>Safest </span>gyms in Town</div>
-                    <div><span>No-Cost </span>EMI available</div>
-                </div>
-                <p class="subscription-heading">Choose Your Subscription</p>
-                <div class="subscription-offers">
-                    <div onclick="window.location.href ='buyPass.html'">
-                        <div class="offer-flex1">
-                            <p>12 Months</p>
-                            <p><span>₹40000 </span> ₹18990</p>
-                        </div>
-                        <div class="offer-flex2">
-                            <p class="buy-tag">BUY</p>
-                        </div>
-                    </div>
-                    <div onclick="window.location.href ='buyPass.html'">
-                        <div class="offer-flex1">
-                            <p>3 Months</p>
-                            <p><span>₹12550 </span> ₹9990</p>
-                        </div>
-                        <div class="offer-flex2">
-                            <p class="buy-tag">BUY</p>
-                        </div>
-                    </div>
-                    <div onclick="window.location.href ='buyPass.html'">
-                        <div class="offer-flex1">
-                            <p>6 Months</p>
-                            <p><span>₹23550 </span> ₹15990</p>
-                        </div>
-                        <div class="offer-flex2">
-                            <p class="buy-tag">BUY</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="grid">
+            <div id="left-data">
+                <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_485,ar_485:605,c_fit/dpr_2/image/packs/cult/CULTPACK99/50_mag_web.jpg" alt="" width="90%">
             </div>
-        </div>
-
-        <div class="cult-offers">
-            <div>
-                <h2>cultpass SELECT</h2>
-                <p class="offer-heading offer-headingp3">cultpass BLACK</p>
-                <div class="offer-heading2">
-                    <div></div>
-                    <div>ENJOY THE BENEFITS OF</div>
-                    <div></div>
-                </div>
-                <div class="offer-type offer-type-select">
-                    <div><span>01 </span>Center Access</div>
-                    <div><span id="infinity"><img
-                                src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,c_fit/dpr_2/image/icons/cult/infinity_white.png"
-                                alt="" width="20px"> </span>Unlimited Classes</div>
-                    <div><span id="location"><img
-                                src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,c_fit/dpr_2/image/icons/cult/location_white_3x.png"
-                                alt="" width="20px"> </span>Available only at few centers</div>
-                </div>
-                <p class="subscription-heading">Choose Your Subscription</p>
-                <div class="subscription-offers">
-                    <div onclick="window.location.href ='buyPass.html'">
-                        <div class="offer-flex1">
-                            <p>12 Months</p>
-                            <p><span>₹10400 </span> ₹5490</p>
-                        </div>
-                        <div class="offer-flex2">
-                            <p class="buy-tag">BUY</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="workouts">
-            <div>WORKOUTS</div>
-            <div id="workout-div">
-                <div onclick="window.location.href ='../manish_cult_fit/yogapose2.html'">
-                    <div id="workout-name">Yoga</div>
-                    <div>
-                        <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_485,ar_485:323,c_fit/dpr_2/v1/cult-media/v2web/workouts/1_id/PRODUCT_BNR_2020-02-04T13:19:29.014Z.png"
-                            alt="" width="100%">
-                    </div>
-                </div>
-                <div>
-                    <div id="workout-name">Boxing</div>
-                    <div>
-                        <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_485,ar_485:323,c_fit/dpr_2/v1/cult-media/v2web/workouts/4_id/PRODUCT_BNR_2020-07-21T18:32:59.441Z.png"
-                            alt="" width="100%">
-                    </div>
-                </div>
-                <div>
-                    <div id="workout-name">Dance Fitness</div>
-                    <div>
-                        <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_485,ar_485:323,c_fit/dpr_2/v1/cult-media/v2web/workouts/84_id/PRODUCT_BNR_2020-02-04T13:04:53.343Z.png"
-                            alt="" width="100%">
-                    </div>
-                </div>
-                <div onclick="window.location.href ='../manish_cult_fit/yogapose1.html'">
-                    <div id="workout-name">S&C</div>
-                    <div>
-                        <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_485,ar_485:323,c_fit/dpr_2/v1/cult-media/v2web/workouts/5_id/PRODUCT_BNR_2020-02-04T13:17:06.754Z.png"
-                            alt="" width="100%">
-                    </div>
-
-                </div>
-                <div>
-                    <div id="workout-name">HRX Workout</div>
-                    <div>
-                        <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_485,ar_485:323,c_fit/dpr_2/v1/cult-media/v2web/workouts/22_id/PRODUCT_BNR_2020-03-04T11:36:46.263Z.png"
-                            alt="" width="100%">
-                    </div>
-
-                </div>
-            </div>
-
-            <div id="quick-link">
-                <div id="quick-link-heading">Quick Links</div>
-                <div>Help & Support</div>
+            <div id="right-data">
+                <div id="pages-links"><span onclick="window.location.href ='home.html'">home </span> > <span onclick="window.location.href ='home_cult_cultCenters.html'"> cult.fit </span> > <span style="font-weight: 900;"> cult.fit packs </span></div>
+                <div id="pass-heading">12 months cultpass BLACK</div>
+                <div id="pass-price"><span>₹40000</span> ₹18990</div>
+                <div id="pass-button"><button>Buy Pass</button></div>
                 <hr>
-                <div>Terms & conditions</div>
+                <div id="offer">Offer</div>
+                <div id="offer1">About this pack</div>
+                <div id="offer-para">Book unlimited Classes anytime at any centre in your city for 12 months Every Cult centre offers a plethora of group workout formats designed and run by highly qualified fitness experts. These workouts are great for newbies and fitness veterans alike, and are guaranteed to show results.</div>
+                <div id="extraWithOffer">Mind.fit membership included!</div>
+                <div id="extraWithOffer-data">
+                    <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_280,ar_4:5,c_fit/dpr_2/image/packs/mind/MINDPACK99/50_mag_ribbon_web.jpg" alt="" width="120px">
+                    <div>
+                        <p style="font-weight: bold;">A Cult membership gives you access to all Mind.fit centres at no extra cost!</p>
+                        <p style="font-size: 15px; opacity: 0.5;">Mind.fit brings you mindful Yoga and Meditation classes.</p>
+                    </div>
+                </div>
                 <hr>
-            </div>
 
-            <div id="motivation-quote">
-                <div>BE SPIRITED</div>
-                <div>FEARLESS</div>
-                <div id="gray">AN EVERYBODY ATHLETE</div>
+                
+                <div id="howItWorks">How it works</div>
+                <div class="howItWorks-data">
+                    <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_50,ar_5:6,c_fit/dpr_2/image/icons/howItWorks/location_black_1.png" alt="">
+                    <div>Select a pack start date, pick your preferred centre and complete the payment</div>
+                </div>
+                <div class="howItWorks-data">
+                    <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_50,ar_5:6,c_fit/dpr_2/image/icons/howItWorks/cult_black_1.png" alt="">
+                    <div>Once you’re a member, you can simply book a class for the workout of your choice.</div>
+                </div>
+                <div class="howItWorks-data">
+                    <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_50,ar_5:6,c_fit/dpr_2/image/icons/howItWorks/copy_black_1.png" alt="" width="100%">
+                    <div>You have unlimited access, find any center and timeslot which works for you and enjoy your workout</div>
+                </div>
+                <div class="howItWorks-data">
+                    <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_50,ar_5:6,c_fit/dpr_2/image/icons/howItWorks/calendar_black_1.png"  alt="" width="100%">
+                    <div>Your booked classes appear on your Upcoming list. Track them using your Home screen</div>
+                </div>
+                <hr>
+
+                <div id="workouts">Workouts</div>
+                <div id="workouts-data">
+                    <div onclick="window.location.href ='../manish_cult_fit/yogapose2.html'">
+                        <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_200,ar_1,fl_progressive,f_auto,q_auto:eco/dpr_2/v1/cult-media/v2web/workouts/yoga/d_yoga_ct_v1.jpg" width="100%" alt="">
+                        <div>Yoga</div>
+                    </div>
+                    <div>
+                        <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_200,ar_1,fl_progressive,f_auto,q_auto:eco/dpr_2/v1/cult-media/v2web/workouts/boxing/d_boxing_ct_v1.jpg" width="100%" alt="">
+                        <div>Boxing</div>
+                    </div>
+                    <div>
+                        <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_200,ar_1,fl_progressive,f_auto,q_auto:eco/dpr_2/v1/cult-media/v2web/workouts/84_id/D_CARD_2019-09-15T07:22:44.713Z.png" width="100%" alt="">
+                        <div>Dance Fitness</div>
+                    </div>
+                    <div onclick="window.location.href ='../manish_cult_fit/yogapose1.html'">
+                        <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_200,ar_1,fl_progressive,f_auto,q_auto:eco/dpr_2/v1/cult-media/v2web/workouts/snc/d_snc_ct_v3.jpg" width="100%" alt="">
+                        <div>S&C</div>
+                    </div>
+                    <div>
+                        <img src="https://cdn-images.cure.fit/www-curefit-com/image/upload/w_200,ar_1,fl_progressive,f_auto,q_auto:eco/dpr_2/v1/cult-media/v2web/workouts/hrx/d_hrx_ct_v1.jpg" width="100%" alt="">
+                        <div>HRX Workout</div>
+                    </div>
+                </div>
             </div>
         </div>
 
+       
         <!-- Footer -->
 
         <div id="footer">
@@ -1404,7 +1174,7 @@
 
 
     <!-- cart-slde-bar -->
-
+ 
     <div class="Cart-container">
         <div id="cart-heading-box">
             <div>Your Cart</div>
@@ -1723,6 +1493,24 @@
     function displayLocation(x) {
         var a = document.getElementById('location-popup');
         a.style.display = "inherit";
+    }
+
+
+
+    // -----location video change------- \\
+    let videoLinks = {
+        bengaluru: "https://cdn-media.cure.fit/image/gymfit/centers/prod/CENTER46/video/gymfit/3dd5ffef-0b0d-4d6e-8720-c18262d959bcCenter_46_App_Video.mp4",
+        hyderabad: "https://cdn-media.cure.fit/image/gymfit/centers/prod/CENTER73/video/gymfit/2ff2c43e-92c3-43b2-b0bd-6da873e96b87Center_73_App_Video.mp4",
+        delhi: "https://cdn-media.cure.fit/image/gymfit/centers/prod/CENTER48/video/gymfit/66a0d47f-fffd-4a2b-9ab9-5f6db41f25f9Center_48_App_Video.mp4",
+        mumbai: "https://cdn-media.cure.fit/image/gymfit/centers/prod/CENTER52/video/gymfit/2d524769-2bf9-4b9f-95bf-4f6e4d6baa74CENTER_52_APP_VIDEO.mp4"
+    }
+
+    function changeVideo() {
+        let state = document.getElementById('gymVideosState').value;
+
+        let video = document.getElementById('stateVideo');
+        video.src = videoLinks[state];
+        console.log("hello");
     }
 
 </script>
