@@ -17,62 +17,64 @@
             font-family: Arial;
             font-size: 17px;
             padding: 8px;
-            background-image: url("https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_580,ar_2.279,c_fit/dpr_2/image/carefit/consultation/Therapy-web3.png");
+            background-image: url("https://i.pinimg.com/originals/46/1d/25/461d254f8563f8945ce3a385f289df17.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
         }
-        
+
         * {
             box-sizing: border-box;
         }
-        
+
         .Fields {
             display: flex;
             flex-wrap: wrap;
             padding: 20px;
             justify-content: space-around;
         }
-        
+
         .Fields div {
             margin-right: 10px;
         }
-        
+
         label {
             margin: 15px;
         }
-        
+
         .formContainer {
             margin: 10px;
-            background-color: pink;
+            background-color: white;
             padding: 5px 20px 15px 20px;
-            border: 1px solid rgb(255, 0, 170);
+            /* border: 1px solid rgb(255, 0, 170); */
             border-radius: 3px;
         }
-        
+
         input[type="text"],
         input[type="password"] {
             display: inline-block;
             width: 100%;
             margin-bottom: 20px;
             padding: 12px;
-            border: 1px solid rgb(255, 0, 157);
+            border: 1px solid rgb(70, 66, 68);
             border-radius: 3px;
         }
-        
+
         label {
-            margin-left: 20px;
+            /* margin-left: 20px; */
+            margin-bottom: 5px;
             display: block;
         }
-        
+
         .icon-formContainer {
             margin-bottom: 20px;
             padding: 7px 0;
             font-size: 24px;
         }
-        
+
         .checkout {
-            background-color: #e90570;
+            background-color: rgb(45, 209, 23);
+            ;
             color: white;
             padding: 12px;
             margin: 10px 0;
@@ -82,43 +84,54 @@
             cursor: pointer;
             font-size: 17px;
         }
-        
+
         .checkout:hover {
-            background-color: #f50676;
+            background-color: #19b813;
         }
-        
+
         a {
             color: black;
         }
-        
+
         span.price {
             float: right;
             color: grey;
         }
-        
+
         @media (max-width: 800px) {
             .Fields {
                 flex-direction: column-reverse;
             }
         }
-        
+
         a {
             text-decoration: none;
         }
+
+        h2 {
+            text-align: center;
+            color: rgb(45, 209, 23);
+        }
+
+        /* .checkbox {
+            display: flex;
+        } */
     </style>
 </head>
 
 <body>
-    <h2 style="text-align: center">Checkout</h2>
-    <div class="Fields">
+    <h2 style="text-align: center" id="h2">Checkout</h2>
+    <div class="Fields" id="fields">
         <div>
             <div class="formContainer">
-                <form>
+                <form id="myform">
                     <div class="Fields">
                         <div>
-                            <h3>Payment</h3>
+                            <div style="text-align: center" class="pymt">
+                                Complete Your Payment
+                            </div>
                             <label for="cname">Name on Card</label>
-                            <input type="text" id="cname" name="cardname" placeholder="Name as on card" />
+                            <input type="text" id="cname" name="cardname" placeholder="Name as on card" autofocus />
                             <label for="ccnum">Debit/Credit card number</label>
                             <input type="text" id="ccnum" name="cardnumber" placeholder="XXXX-XXXX-XXXX-XXXX" />
                             <div class="Fields">
@@ -128,14 +141,20 @@
                                 </div>
                                 <div>
                                     <label for="cvv">CVV</label>
-                                    <input type="password" id="cvv" name="cvv" placeholder="***" />
+                                    <input type="password" id="cvv" name="cvv" placeholder="*" />
                                 </div>
                             </div>
                         </div>
                     </div>
                     <button onclick="checkoutbtn(event)" id="paybutton" class="checkout">
-              Pay
-            </button>
+                        Pay
+                    </button>
+                    <div class="checkbox"><input type="checkbox" name="check" id="check" value="1">
+
+                        by checking this box i agree all terms and
+                        conditions
+
+                    </div>
                 </form>
             </div>
         </div>
@@ -144,19 +163,70 @@
 
 </html>
 
+
 <script>
-    let store = JSON.parse(localStorage.getItem("cartfood"));
-    length.innerHTML = store.length;
-    let total = 0;
-    for (var i = 0; i < store.length; i++) {
-        total += store[i].price;
-    }
+    var queryString = decodeURIComponent(window.location.search);
+    queryString = queryString.substring(1);
+    // var queries = queryString.split("&");
+    console.log(queryString)
+
     let paybutton = document.getElementById("paybutton");
-    paybutton.innerHTML = "Pay ₹ " + total;
+    paybutton.innerHTML = "Pay ₹ " + queryString;
 
     function checkoutbtn(event) {
         event.preventDefault();
-        alert("Thankyou");
-        console.log("Hii");
+        // alert("hy")
+        let form = document.getElementById("myform");
+        let name = form.cardname.value;
+        let check = document.querySelectorAll('input[type="checkbox"]:checked').value;
+        alert(check)
+        let number = form.cardnumber.value;
+        let year = form.expyear.value;
+        let cvv = form.cvv.value;
+        console.log(name, number, year)
+        if (queryString == 0) {
+            alert("No Item in Cart Add Item To Cart");
+        } else if (!name || !number || !year || !cvv) {
+            alert("Enter Correct Details");
+        } else {
+            number = number.split("");
+            if (number.length != 16) {
+                alert("Enter Correct Card Number");
+            } else {
+                cvv = cvv.split("");
+                if (cvv.length != 3) {
+                    alert("Enter Correct CVV Number");
+                } else {
+                    if (year >= 2021) {
+                        // Main
+                        let cartfood = JSON.parse(localStorage.getItem("cartfood"));
+                        cartfood = [];
+                        localStorage.setItem("cartfood", JSON.stringify(cartfood));
+                        let field = document.getElementById("fields");
+                        let h2 = document.getElementById("h2");
+                        let arr = ["Thankyou For Shopping at Us", "Have a Nice Day"];
+                        setTimeout(() => {
+                            field.setAttribute("class", "hide");
+                            h2.innerHTML = i;
+                        }, 2000);
+                        for (var a = 0; a < arr.length; a++) {
+                            field.innerHTML = null;
+                            let i = arr[a];
+
+                            let stop = setInterval(function () {
+                                h2.innerHTML = null;
+                                h2.innerHTML = i;
+                                window.location.href = "foodhub.html";
+                                clearInterval(stop);
+                            }, 2000);
+                            h2.innerHTML = arr[0];
+                        }
+                    } else {
+                        alert("Card Is Expired");
+                    }
+                }
+            }
+        }
     }
+
 </script>

@@ -307,6 +307,60 @@
     </div>
 
     <!-- nav end  -->
+    <!-- pymt meth -->
+    <div id="login-page">
+        <div id="close-button">
+            <button onclick="window.location.href = 'cartpage.html'">
+                <span>X</span>
+            </button>
+        </div>
+        <div id="login-logo-popup">
+            <h2 style="font-weight: 800">Payment Option</h2>
+        </div>
+        <div id="login-input-container">
+            <div>
+                <h3 id="money">₹ 0</h3>
+            </div>
+        </div>
+        <div onclick="window.location.href='checkout.html'" class="center">
+            <h3>
+                <i style="color: rgb(243, 39, 134); float: left" class="fa fa-credit-card" aria-hidden="true"></i> HDFC
+                Bank
+                Offer
+            </h3>
+            <p style="color: blue; font-size: 12px">
+                10X Rewards on HDFC Bank Diners Club Credit Cards
+            </p>
+        </div>
+        <div onclick="window.location.href='checkout.html'" class="center">
+            <h3>
+                <i style="color: rgb(243, 39, 134); float: left" class="fa fa-cc-mastercard" aria-hidden="true"></i>
+                Credit
+                Card & Debit Card
+            </h3>
+            <p style="color: blue; font-size: 12px">
+                Flat 5% cashback with FlexiPay by HDFC Bank
+            </p>
+        </div>
+        <div class="center">
+            <h3>
+                <img style="float: left; margin: -15px" src="https://static.cure.fit/assets/images/phonePe.svg"
+                    alt="" />
+                PhonePe/BHIM UPI
+            </h3>
+        </div>
+        <div class="center">
+            <h3>
+                <i style="float: left; color: crimson" class="fa fa-amazon" aria-hidden="true"></i>Amazon Pay
+            </h3>
+        </div>
+        <div class="center">
+            <h3>
+                <i style="float: left; color: crimson" class="fa fa-money" aria-hidden="true"></i>Pay On Delivery
+            </h3>
+        </div>
+    </div>
+    <!-- pymt end -->
     <!-- nav end -->
     <!-- displat itm -->
     <div class="cartpart">
@@ -334,8 +388,8 @@
                     <p class="tp-head">Total Payable</p>
                     <p class="tp-is" id="to-p-is">₹ 3316</p>
                 </div>
-                <div id="checkout" class="checkout" onclick="checkout()">
-                    <button type="submit" class="checkout-btn">Checkout</button>
+                <div id="checkout" class="checkout">
+                    <button type="submit" class="checkout-btn" id="addaddbtn" onclick="pymtPage()">add Add</button>
                 </div>
             </div>
             <!-- <hr class="adreshr"> -->
@@ -482,6 +536,36 @@
 </html>
 <script>
     // display cart item
+    // select pmt method
+    function pymtPage() {
+        let ans = document.getElementById("addressdisplay").innerHTML;
+        if (ans == "Please Add Address") {
+            addressadd();
+            addadd();
+        } else {
+            // window.location.href = "checkout.html"
+            let finalampart = document.getElementById('to-p-is').innerHTML
+            let finalamarr = finalampart.split(" ")
+            final_amount = +(finalamarr[finalamarr.length - 1])
+            // console.log(final_amount)
+
+            var queryString =
+                "?" +
+                final_amount;
+            window.location.href = "checkout.html" + queryString
+            // var blur = document.getElementById("blur");
+            // blur.classList.toggle("active");
+
+            // var popup = document.getElementById("login-page");
+            // popup.classList.toggle("active");
+        }
+    }
+
+    function addadd() {
+        let addadd = document.getElementById("addaddbtn");
+        addadd.innerHTML = "Checkout";
+    }
+    // 
 
     let data = JSON.parse(localStorage.getItem("cartfood"));
     // console.log(data)
@@ -700,6 +784,24 @@
     }
 
     //end display cart item
+    // let finalampart = document.getElementById('to-p-is').innerHTML
+    // let finalamarr = finalampart.split(" ")
+    // final_amount = +(finalamarr[finalamarr.length - 1])
+    // // console.log(final_amount)
+
+    // var queryString =
+    //     "?" +
+    //     final_amount;
+    // window.location.href = "checkout.html" + queryString
+
+
+
+
+
+
+
+
+    // 
     var rotateDropDown = -180;
     function dropdowneffect(x) {
         var img = document.getElementById(x);
@@ -716,14 +818,32 @@
     }
 
     //   addressadd
-    function addressadd() { }
+    function addressadd() {
+        let adad = document.querySelector('.address-taking')
+        adad.style.display = "inline"
+
+    }
     function addthisadd() {
         let addressis = document.getElementById("addressdisplay");
 
         let inputadd = document.getElementById("addres-take-part").value;
 
         addressis.innerHTML = inputadd;
+        let adad = document.querySelector('.address-taking')
+        adad.style.display = "none"
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
     // login
     function fetchLoginPage() {
