@@ -113,6 +113,12 @@
             color: rgb(45, 209, 23);
         }
 
+        .pymt {
+            text-align: center;
+            font-size: 25px;
+            color: rgb(45, 209, 23);
+        }
+
         /* .checkbox {
             display: flex;
         } */
@@ -149,7 +155,7 @@
                     <button onclick="checkoutbtn(event)" id="paybutton" class="checkout">
                         Pay
                     </button>
-                    <div class="checkbox"><input type="checkbox" name="check" id="check" value="1">
+                    <div class="checkbox"><input type="checkbox" name="check" id="checkboxid">
 
                         by checking this box i agree all terms and
                         conditions
@@ -178,8 +184,8 @@
         // alert("hy")
         let form = document.getElementById("myform");
         let name = form.cardname.value;
-        let check = document.querySelectorAll('input[type="checkbox"]:checked').value;
-        alert(check)
+        var check = document.getElementById('checkboxid');
+
         let number = form.cardnumber.value;
         let year = form.expyear.value;
         let cvv = form.cvv.value;
@@ -196,7 +202,10 @@
                 cvv = cvv.split("");
                 if (cvv.length != 3) {
                     alert("Enter Correct CVV Number");
-                } else {
+                } else if (!check.checked) {
+                    alert("agree terms and conditions")
+                }
+                else {
                     if (year >= 2021) {
                         // Main
                         let cartfood = JSON.parse(localStorage.getItem("cartfood"));
