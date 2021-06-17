@@ -186,7 +186,7 @@
                                 </a>
                             </div>
                             <div id="cart">
-                                <a href="#cart" onclick="displayCart()">
+                                <a href="#cart" onclick="window.location.href = 'cartpage.html'">
                                     <img src="https://static.cure.fit/assets/images/cart-image.svg" alt="" />
                                     <span id="badge" style="
                         color: #f37597;
@@ -326,7 +326,7 @@
                         </a>
                     </div>
                     <div>
-                        <a href="../jagadish_cult/online_consult.html">
+                        <a href="#Live">
                             <img src="https://static.cure.fit/assets/images/carefit-blk.svg" alt="" width="38px" />
                             <div>
                                 <p>CARE</p>
@@ -533,6 +533,7 @@
     var queryString = decodeURIComponent(window.location.search);
     queryString = queryString.substring(1);
     var queries = queryString.split("&");
+    console.log(queries);
     let cartname, cartdesc, cartimage, cartprice, cartcutprice, cartdiscount, id;
     let show_img = document.getElementById("show-img");
     let show_data = document.getElementById("show-data");

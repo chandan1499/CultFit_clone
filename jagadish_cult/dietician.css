@@ -136,6 +136,7 @@ a {
   height: 100%;
   margin: auto;
   align-items: center;
+  justify-content: center;
 }
 
 #nav-links ul {
@@ -643,7 +644,7 @@ a {
   width: 80px;
 }
 
-#grid-links div:nth-child(2) a div p {
+#grid-links div:nth-child(4) a div p {
   color: #fc2e71;
 }
 
@@ -891,8 +892,8 @@ a {
   letter-spacing: 0.05em;
 }
 hr {
-  margin: auto;
-  width: 80%;
+  margin: 5px auto;
+  width: 100%;
 }
 
 .accordion > li:after {
@@ -1148,7 +1149,7 @@ a {
   width: 70%;
   margin: 57px auto 0px;
   padding: 15px;
-  position: absolute;
+  position: fixed;
   top: 30px;
   left: 15%;
 }

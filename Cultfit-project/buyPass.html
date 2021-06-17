@@ -1013,7 +1013,7 @@
                 <div id="pages-links"><span onclick="window.location.href ='home.html'">home </span> > <span onclick="window.location.href ='home_cult_cultCenters.html'"> cult.fit </span> > <span style="font-weight: 900;"> cult.fit packs </span></div>
                 <div id="pass-heading">12 months cultpass BLACK</div>
                 <div id="pass-price"><span>₹40000</span> ₹18990</div>
-                <div id="pass-button"><button>Buy Pass</button></div>
+                <div id="pass-button"><button onclick="openPayment()">Buy Pass</button></div>
                 <hr>
                 <div id="offer">Offer</div>
                 <div id="offer1">About this pack</div>
@@ -1511,6 +1511,18 @@
         let video = document.getElementById('stateVideo');
         video.src = videoLinks[state];
         console.log("hello");
+    }
+
+
+    function openPayment() {
+        let login = document.getElementById('login-text');
+        if(login.innerHTML == "Login"){
+            fetchLoginPage();
+            return;
+        }
+
+        localStorage.setItem('chandanPass', JSON.stringify("18990"));
+        window.location.href = "checkout.html";
     }
 
 </script>

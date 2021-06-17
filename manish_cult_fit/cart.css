@@ -636,7 +636,7 @@ body {
 .imgdiv {
     border-radius: 5px;
     width: 35%;
-    height: 100%;
+    height: auto;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -647,7 +647,8 @@ body {
 }
 
 .food-dit i {
-    color: pink;
+    color: #fc2e71;
+    ;
 }
 
 .clhading {
@@ -710,7 +711,7 @@ body {
 
 .quantity-count-div2 {
     /* margin-left: -15px; */
-    border: 3px solid pink;
+    border: 3px solid #fc2e71;
     border-radius: 60px;
     width: 100%;
     flex-direction: row-reverse;
@@ -736,9 +737,16 @@ hr {
     padding: 50px;
 }
 
+.cartpart>#contanier>div {
+    height: auto;
+}
+
 @media only screen and (max-width: 900px) {
     .cartpart {
         grid-template-columns: 100%;
+    }
+    .cartpart>#container>div {
+        height: auto;
     }
 }
 
@@ -861,13 +869,15 @@ hr {
 }
 
 .checkout-btn {
-    border-radius: 10px 10px 10px 10px;
-    height: 30px;
-    padding: 10px;
-    line-height: 10px;
-    background-color: rgb(248, 66, 59);
+    border-radius: 25px;
+    height: 40px;
+    padding-left: 28px;
+    padding-right: 28px;
+    background-image: linear-gradient(to right top, #f84434, #fc3d44, #ff3653, #ff3261, #ff3070);
     border: none;
-    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
 }
 
 

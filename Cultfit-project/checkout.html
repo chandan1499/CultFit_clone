@@ -161,16 +161,8 @@
 </html>
 
 <script>
-    let store = JSON.parse(localStorage.getItem("store"));
-    length.innerHTML = store.length;
-    let total = 0,
-        discount = 0;
-    for (var i = 0; i < store.length; i++) {
-        let cutprice = store[i].cutprice.split(" ").map(Number);
-        discount += cutprice[1] * store[i].qty - store[i].price * store[i].qty;
-        total += store[i].price * store[i].qty;
-    }
-    total = total - discount;
+    let store = JSON.parse(localStorage.getItem("chandanPass"));
+    total = +(store);
     let paybutton = document.getElementById("paybutton");
     paybutton.innerHTML = "Pay ₹ " + total;
 
