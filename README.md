@@ -8,4 +8,7 @@ This project is a complete clone UI with some functionalities of cultfit website
   <li>JS</li>
 </ul>
 ## Used libraries
-Font awesome icon, Google fonts
+<ul>
+  <li>Font awesome</li>
+  <li>Google fonts</li>
+</ul>
