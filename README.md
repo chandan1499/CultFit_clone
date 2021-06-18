@@ -7,5 +7,4 @@ CSS
 JS
 
 ## Used libraries
-1.Font awesome icon
-2.Google fonts
+Font awesome icon, Google fonts
