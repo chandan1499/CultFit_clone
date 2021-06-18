@@ -7,6 +7,7 @@ This project is a complete clone UI with some functionalities of cultfit website
   <li>CSS</li>
   <li>JS</li>
 </ul>
+
 ## Used libraries
 <ul>
   <li>Font awesome</li>
