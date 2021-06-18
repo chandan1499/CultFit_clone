@@ -2,7 +2,7 @@
 This project is a complete clone UI with some functionalities of cultfit website. 
 
 ## Built with
-HTML
+HTML <br>
 CSS
 JS
 
