@@ -699,6 +699,7 @@
         let alradyadd = false
         for (let k = 0; k < ar.length; k++) {
             if (ar[k].id == el.id) {
+                ar[k].qty = ar[k].qty+1;
                 alert("Item alrady added please visit cart")
                 alradyadd = true;
                 break
@@ -706,10 +707,14 @@
 
         }
         if (!alradyadd) {
-            ar.push(el)
+            el.qty = 1;
+            ar.push(el);
             alert(`${el.name} added in cart sucessfully`)
         }
-        localStorage.setItem('cartfood', JSON.stringify(ar))
+
+
+        localStorage.setItem('cartfood', JSON.stringify(ar));
+        console.log(JSON.parse(localStorage.getItem('cartfood')));
 
     }
 

@@ -597,7 +597,7 @@
             alert("Select Size");
         } else {
             obj = {
-                id: id,
+                id: `${id +"?"+size}`,
                 size: size,
                 name: cartname,
                 image: cartimage,
@@ -616,7 +616,7 @@
                 store = JSON.parse(localStorage.getItem("store"));
                 let found = false;
                 for (var o = 0; o < store.length; o++) {
-                    if (store[o].id == obj.id && store[o].size == obj.size) {
+                    if (store[o].id == obj.id && store[o].size == obj.size && store[o].qty > 0) {
                         store[o].qty += 1;
                         localStorage.setItem("store", JSON.stringify(store));
                         found = true;

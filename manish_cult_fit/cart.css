@@ -156,15 +156,9 @@ body {
 }
 
 @keyframes popup {
-    0% {
-        top: 110%;
-    }
-    30% {
-        top: 30%;
-    }
-    100% {
-        top: 47%;
-    }
+    0%{ top: 110%; }
+    30%{ top: 30%; }
+    100%{ top: 47%; }
 }
 
 #close-button {
@@ -211,10 +205,6 @@ body {
     margin-top: 15px;
 }
 
-#login-password {
-    letter-spacing: normal !important;
-}
-
 #login-input img {
     margin-left: 10px;
 }
@@ -223,15 +213,26 @@ body {
     max-width: fit-content;
     margin: 10px auto 0px;
     font-family: 'Roboto', sans-serif;
+    
 }
 
 #login-input input {
     border: none;
     font-size: 17px;
     color: rgb(0, 0, 0);
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     border-bottom: 2px solid rgb(151, 151, 151);
     margin-top: 5px;
+}
+
+#login-password {
+    letter-spacing: normal !important;
+}
+
+#login-input i {
+    float: right;
+    width: 10px;
+    cursor: pointer;
 }
 
 #login-input input:focus {
@@ -240,12 +241,12 @@ body {
 }
 
 #login-input input::-webkit-outer-spin-button,
-#login-input input::-webkit-inner-spin-button {
+#login-input input::-webkit-inner-spin-button{
     -webkit-appearance: none;
     margin: 0;
-}
+} 
 
-#login-input input::placeholder {
+#login-input input::placeholder{
     letter-spacing: normal;
 }
 
@@ -266,7 +267,7 @@ body {
     background-image: linear-gradient(99deg, rgb(202, 202, 202), rgb(199, 199, 199));
 }
 
-.input-login-box:hover {
+.input-login-box:hover{
     box-shadow: rgb(247 123 155 / 71%) 0px 3px 16px 0px;
     background-image: linear-gradient(101deg, rgb(247, 69, 48), rgb(255, 46, 115));
 }
@@ -288,7 +289,7 @@ body {
     list-style-position: outside;
 }
 
-.TnC-check a {
+.TnC-check a{
     color: rgb(224, 32, 32) !important;
 }
 
