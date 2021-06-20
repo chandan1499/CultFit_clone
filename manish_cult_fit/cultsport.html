@@ -1520,8 +1520,14 @@
 <script>
     let store = JSON.parse(localStorage.getItem("store"));
     if (store != null) {
+        let len = 0;
+        for (var i = 0; i < store.length; i++) {
+            if (store[i].qty >= 1) {
+                len++;
+            }
+        }
         let badge = document.getElementById("badge");
-        badge.innerHTML = store.length;
+        badge.innerHTML = len;
     }
 
     function showproduct(pro1) {
