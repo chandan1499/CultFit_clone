@@ -45,7 +45,7 @@ input[type="search"],
 input[type="tel"],
 input[type="time"],
 input[type="url"],
-textarea,
+input[type="appo"],
 select {
   border: none;
   font-size: 15px;
@@ -68,12 +68,13 @@ input[type="search"],
 input[type="tel"],
 input[type="time"],
 input[type="url"],
-textarea,
+input[type="appo"],
 select :focus {
   outline: none;
   border-bottom: 2px solid grey;
   width: 90%;
 }
+
 
 input[type="radio"],
 input[type="checkbox"]
@@ -186,8 +187,8 @@ label.light {
                     <option value="checkup">Check up</option>
                 </select>
                 <label for="appointment_description">Appointment Description:</label>
-                <textarea id="appointment_description" name="appointment_description"
-                    placeholder="appointment Description"></textarea>
+                <input id="appointment_description" name="appointment_description"
+                    placeholder="appointment Description" type="appo"></input>
                 <label for="date">Date*:</label>
                 <input type="date" name="date" value="" required></input>
                 <br>
