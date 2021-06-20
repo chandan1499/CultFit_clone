@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-​
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -166,6 +166,8 @@
             border-radius: 5px;
             margin-bottom: 15px;
             font-weight: 700;
+            cursor: pointer;
+            width: auto;
         }
         /* RESPONSIVE */
         
@@ -210,15 +212,20 @@
                 width: 100%;
             }
         }
+        
+        .hide {
+            display: none;
+        }
     </style>
 </head>
-​
+
 <body>
     <div class="logo">
         <img src="https://static.cure.fit/assets/images/favicon.png" alt="" />
         <img src="https://api.juspay.in/images/juspay/jp-logo-v3.1.1.png" alt="" />
     </div>
-    <div class="main-div">
+    <h2 style="text-align: center" id="h2"></h2>
+    <div id="main-div" class="main-div">
         <div class="header">Complete your payment</div>
         <div class="cart">
             <p>
@@ -236,8 +243,8 @@
             </div>
             <div>
                 <p>Amount</p>
-                <p id="amount" style="font-weight: 700; font-size: 18px">
-                    <i class="fa fa-inr" aria-hidden="true">&nbsp;</i>0
+                <p style="font-weight: 700; font-size: 18px">
+                    <i id="amount" class="fa fa-inr" aria-hidden="true">&nbsp;0</i>
                 </p>
             </div>
         </div>
@@ -277,13 +284,15 @@
                 </div>
             </form>
         </div>
-​
+
         <div class="checkbox">
             <input type="checkbox" name="check" id="check" value="1" />(Save card details for future transactions.)
         </div>
         <div class="button">
-            <button>
-          Process &nbsp;<i class="fa fa-inr" aria-hidden="true">&nbsp;</i>0
+            <button onclick="checkoutbtn(event)">
+          Process &nbsp;<i id="amount1" class="fa fa-inr" aria-hidden="true"
+            >&nbsp;&nbsp;0</i
+          >
         </button>
             <p>
                 By clicking 'Process' button, you acknowledge that you have read and agree to the Terms and Conditions.
@@ -291,5 +300,85 @@
         </div>
     </div>
 </body>
-​
+
 </html>
+
+<script>
+    // random order ID
+    let store = JSON.parse(localStorage.getItem("store"));
+    let orderidvalue = Math.floor(1000000 + Math.random() * 9000);
+    if (store.length > 0) {
+        let orderid = document.getElementById("orderid");
+        orderid.innerHTML = orderidvalue;
+    }
+
+    length.innerHTML = store.length;
+    let total = 0,
+        discount = 0;
+    for (var i = 0; i < store.length; i++) {
+        let cutprice = store[i].cutprice.split(" ").map(Number);
+        discount += cutprice[1] * store[i].qty - store[i].price * store[i].qty;
+        total += store[i].price * store[i].qty;
+    }
+    // total = total - discount;
+    let amount = document.getElementById("amount");
+    amount.innerHTML = total;
+    let amount1 = document.getElementById("amount1");
+    amount1.innerHTML = total;
+
+    function checkoutbtn(event) {
+        event.preventDefault();
+        let form = document.getElementById("myform");
+        let name = form.cardname.value;
+        let number = form.cardnumber.value;
+        let year = form.yy.value;
+        let month = form.mm.value;
+        let cvv = form.cvv.value;
+
+        if (total == 0) {
+            alert("No Item in Cart Add Item To Cart");
+        } else if (!name || !number || !year || !month || !cvv) {
+            alert("One or More Fields Are Empty");
+        } else {
+            number = number.split("");
+            if (number.length != 16) {
+                alert("Enter Correct Card Number");
+            } else {
+                cvv = cvv.split("");
+                if (cvv.length != 3) {
+                    alert("Enter Correct CVV Number");
+                } else if (month <= 0 || month >= 13) {
+                    alert("Invalid Month");
+                } else {
+                    if (year >= 2021) {
+                        // Main
+                        let store = JSON.parse(localStorage.getItem("store"));
+                        store = [];
+                        localStorage.setItem("store", JSON.stringify(store));
+                        let field = document.getElementById("main-div");
+                        let h2 = document.getElementById("h2");
+                        let arr = ["Thankyou For Shopping at Us", "Have a Nice Day"];
+                        setTimeout(() => {
+                            field.setAttribute("class", "hide");
+                            h2.innerHTML = i;
+                        }, 2000);
+                        for (var a = 0; a < arr.length; a++) {
+                            field.innerHTML = null;
+                            let i = arr[a];
+
+                            let stop = setInterval(function() {
+                                h2.innerHTML = null;
+                                h2.innerHTML = i;
+                                window.location.href = "cultsport.html";
+                                clearInterval(stop);
+                            }, 2000);
+                            h2.innerHTML = arr[0];
+                        }
+                    } else {
+                        alert("Card Is Expired");
+                    }
+                }
+            }
+        }
+    }
+</script>
