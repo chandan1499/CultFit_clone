@@ -4,13 +4,17 @@
 }
 
 #addressdisplay input {
-   padding: 5px;
-   border: none;
-   font-size: 18px;
+  padding: 5px;
+  border: none;
+  font-size: 18px;
 }
 
 .billing hr {
   width: 80%;
+}
+.billing {
+  min-width: 90%;
+  margin: auto;
 }
 
 /* select paymt method */
@@ -666,6 +670,9 @@ body {
   font-family: "Poppins", sans-serif;
   min-height: 800px;
 }
+.cartpart {
+  height: fit-content;
+}
 .flexis {
   display: flex;
   font-family: "Poppins", sans-serif;
@@ -764,6 +771,10 @@ hr {
   display: grid;
   grid-template-columns: auto auto;
   padding: 50px;
+}
+.cartpart > div:nth-child(2) {
+  margin: auto;
+  min-width: none;
 }
 
 /* oderpart */

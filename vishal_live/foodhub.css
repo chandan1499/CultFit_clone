@@ -125,200 +125,206 @@ body {
   margin-left: 25px;
 }
 
+/* Login-page-css */
 
-        /* Login-page-css */
+#login-page {
+  position: fixed;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 400px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  background-color: rgb(255, 255, 255);
+  visibility: hidden;
+  opacity: 0;
+}
 
+#login-page.active {
+  animation: popup 0.4s linear;
+  visibility: visible;
+  opacity: 1;
+}
 
+@keyframes popup {
+  0% {
+    top: 110%;
+  }
 
+  30% {
+    top: 30%;
+  }
 
-        #login-page {
-          position: fixed;
-          top: 47%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          padding: 0px;
-          display: flex;
-          flex-direction: column;
-          height: 600px;
-          width: 400px;
-          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-          border-radius: 16px;
-          background-color: rgb(255, 255, 255);
-          visibility: hidden;
-          opacity: 0;
-      }
+  100% {
+    top: 47%;
+  }
+}
 
-      #login-page.active {
-          animation: popup 0.4s linear;
-          visibility: visible;
-          opacity: 1;
-      }
+#close-button {
+  max-width: 100%;
+  margin-top: 10px;
+  text-align: right;
+  padding: 10px 15px 0px 0px;
+}
 
-      @keyframes popup {
-          0% {
-              top: 110%;
-          }
+#close-button button {
+  font-size: 15px !important;
+  cursor: pointer;
+  font-weight: 600;
+  background: 0 0;
+  border: 0;
+  color: gray;
+  opacity: 0.5;
+}
 
-          30% {
-              top: 30%;
-          }
+#close-button button:hover {
+  opacity: 1;
+}
 
-          100% {
-              top: 47%;
-          }
-      }
+#login-logo-popup {
+  text-align: center;
+  margin-top: 20px;
+}
 
-      #close-button {
-          max-width: 100%;
-          margin-top: 10px;
-          text-align: right;
-          padding: 10px 15px 0px 0px;
-      }
+#login-logo-popup img {
+  width: 28%;
+  align-self: center;
+}
 
-      #close-button button {
-          font-size: 15px !important;
-          cursor: pointer;
-          font-weight: 600;
-          background: 0 0;
-          border: 0;
-          color: gray;
-          opacity: 0.5;
-      }
+#login-logo-popup :nth-child(2) {
+  margin-top: 10px;
+  width: 33%;
+}
 
-      #close-button button:hover {
-          opacity: 1;
-      }
+#login-input {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 3px;
+  font-size: 14px;
+  margin-top: 15px;
+}
 
-      #login-logo-popup {
-          text-align: center;
-          margin-top: 20px;
-      }
+#login-password {
+  letter-spacing: normal !important;
+}
 
-      #login-logo-popup img {
-          width: 28%;
-          align-self: center;
-      }
+#login-input img {
+  margin-left: 10px;
+}
 
-      #login-logo-popup :nth-child(2) {
-          margin-top: 10px;
-          width: 33%;
-      }
+#login-input-container {
+  max-width: fit-content;
+  margin: 10px auto 0px;
+  font-family: "Roboto", sans-serif;
+}
 
-      #login-input {
-          font-size: 20px;
-          font-weight: bolder;
-          margin-bottom: 3px;
-          font-size: 14px;
-          margin-top: 15px;
-      }
+#login-input input {
+  border: none;
+  font-size: 17px;
+  color: rgb(0, 0, 0);
+  letter-spacing: 5px;
+  border-bottom: 2px solid rgb(151, 151, 151);
+  margin-top: 5px;
+}
 
-      #login-password {
-          letter-spacing: normal !important;
-      }
+#login-input input:focus {
+  outline: none;
+  border-bottom: 2px solid black;
+}
 
-      #login-input img {
-          margin-left: 10px;
-      }
+#login-input input::-webkit-outer-spin-button,
+#login-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-      #login-input-container {
-          max-width: fit-content;
-          margin: 10px auto 0px;
-          font-family: 'Roboto', sans-serif;
+#login-input input::placeholder {
+  letter-spacing: normal;
+}
 
-      }
+#submit-login {
+  margin-top: 30px;
+  text-align: center;
+}
 
-      #login-input input {
-          border: none;
-          font-size: 17px;
-          color: rgb(0, 0, 0);
-          letter-spacing: 5px;
-          border-bottom: 2px solid rgb(151, 151, 151);
-          margin-top: 5px;
-      }
+.input-login-box {
+  color: rgb(255, 255, 255);
+  box-shadow: none;
+  border: 0px;
+  width: 69%;
+  height: 50px;
+  border-radius: 31px;
+  font-size: 18px;
+  cursor: pointer;
+  background-image: linear-gradient(
+    99deg,
+    rgb(202, 202, 202),
+    rgb(199, 199, 199)
+  );
+}
 
-      #login-input input:focus {
-          outline: none;
-          border-bottom: 2px solid black;
-      }
+.input-login-box:hover {
+  box-shadow: rgb(247 123 155 / 71%) 0px 3px 16px 0px;
+  background-image: linear-gradient(
+    101deg,
+    rgb(247, 69, 48),
+    rgb(255, 46, 115)
+  );
+}
 
-      #login-input input::-webkit-outer-spin-button,
-      #login-input input::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-      }
+.TnC-check {
+  font-size: 13px;
+  letter-spacing: 0px;
+  font-family: "Roboto", sans-serif;
+  color: rgb(102, 102, 102);
+  width: 69%;
+  margin: 20px auto 10px;
+  text-align: left;
+  font-weight: 700;
+}
 
-      #login-input input::placeholder {
-          letter-spacing: normal;
-      }
+.TnC-check div:nth-child(1) {
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: outside;
+}
 
-      #submit-login {
-          margin-top: 30px;
-          text-align: center;
-      }
+.TnC-check a {
+  color: rgb(224, 32, 32) !important;
+}
 
-      .input-login-box {
-          color: rgb(255, 255, 255);
-          box-shadow: none;
-          border: 0px;
-          width: 69%;
-          height: 50px;
-          border-radius: 31px;
-          font-size: 18px;
-          cursor: pointer;
-          background-image: linear-gradient(99deg, rgb(202, 202, 202), rgb(199, 199, 199));
-      }
+#login-with-gmail {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  box-shadow: rgb(202 202 202) 0px 3px 16px 0px;
+  border: 0px;
+  width: 69%;
+  height: 50px;
+  border-radius: 31px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  align-items: center;
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    rgb(111, 105, 170),
+    rgb(55, 138, 197)
+  );
+}
 
-      .input-login-box:hover {
-          box-shadow: rgb(247 123 155 / 71%) 0px 3px 16px 0px;
-          background-image: linear-gradient(101deg, rgb(247, 69, 48), rgb(255, 46, 115));
-      }
+#login-with-gmail i {
+  padding: 0px 10px;
+}
 
-      .TnC-check {
-          font-size: 13px;
-          letter-spacing: 0px;
-          font-family: 'Roboto', sans-serif;
-          color: rgb(102, 102, 102);
-          width: 69%;
-          margin: 20px auto 10px;
-          text-align: left;
-          font-weight: 700;
-      }
-
-      .TnC-check div:nth-child(1) {
-          display: list-item;
-          list-style-type: disc;
-          list-style-position: outside;
-      }
-
-      .TnC-check a {
-          color: rgb(224, 32, 32) !important;
-      }
-
-      #login-with-gmail {
-          color: white;
-          font-family: 'Poppins', sans-serif;
-          font-weight: 600;
-          box-shadow: rgb(202 202 202) 0px 3px 16px 0px;
-          border: 0px;
-          width: 69%;
-          height: 50px;
-          border-radius: 31px;
-          font-size: 18px;
-          display: flex;
-          justify-content: center;
-          margin: 10px auto;
-          align-items: center;
-          cursor: pointer;
-          background-image: linear-gradient(to right, rgb(111, 105, 170), rgb(55, 138, 197));
-      }
-
-      #login-with-gmail i {
-          padding: 0px 10px;
-      }
-
-
- /* ------------User-information-login------------- */
- #user-info-popup {
+/* ------------User-information-login------------- */
+#user-info-popup {
   display: none;
   position: fixed;
   padding: 3px;
@@ -340,11 +346,9 @@ body {
   display: inherit;
 }
 
-
-
 #user-info-popup div {
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 
@@ -352,11 +356,9 @@ body {
   margin-right: 20px;
 }
 
-
 #user-info-popup div:hover {
   opacity: 0.5;
 }
-
 
 /* -------- Cart-window ---------- */
 
@@ -643,15 +645,15 @@ body {
   margin-left: 10px;
 }
 .Recipes {
-  margin-top: 100px;
-  padding: 50px;
+  margin-top: 0px;
+  padding: 0 10% 5% 10%;
 }
 .view-diss {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
 }
 .view-diss > div {
-  margin: 3%;
+  margin: 5%;
 }
 .ditels {
   display: grid;
@@ -663,12 +665,23 @@ body {
   border: 0px;
   height: 90%;
   width: 90%;
-  background-color: yellowgreen;
+  background-color: transparent;
+  border: 1px solid rgb(187, 233, 94);
+  color: rgb(169, 250, 8);
   cursor: pointer;
+  font-weight: 700;
+  transition: 1s;
+}
+
+.ditels > button:hover {
+  background-color: yellowgreen;
+  color: white;
+  border: none;
 }
 .ditels > div {
   width: 90%;
   display: block;
+  text-align: left;
 }
 /* .foodimg {
   width: 100%;
@@ -881,8 +894,8 @@ a {
 }
 .Healthy-Recipes {
   margin-top: 100px;
-  padding: 50px;
-  margin-bottom: -100px;
+  padding: 5% 10% 5% 10%;
+  margin-bottom: 0px;
 }
 .Healthy-Recipes h2 {
   font-family: "Merriweather", serif;
@@ -923,16 +936,22 @@ a {
   border-radius: 5px 5px 0px 0px;
   /* margin-top: 20px; */
 }
+
 .foodimg > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .foodbox {
-  height: 400px;
-  /* margin-top: 20px; */
-  padding: 10px;
+  display: inline-block;
+  height: 350px;
+  /* margin-bottom: 100px; */
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
 }
+
 .foodbox button {
   border-radius: 5px;
   margin-right: 2px;
@@ -941,7 +960,7 @@ a {
 /* food end */
 /* Cookery Shows */
 .Cookery-Shows-part {
-  padding: 50px;
+  padding: 0 10% 0 10%;
 }
 .Cookery-Shows-part h2 {
   margin-left: 10px;
@@ -975,8 +994,6 @@ hr {
   margin: 5px auto;
 }
 
-
-
 /* Cookery Shows end */
 
 @media only screen and (max-width: 600px) {
@@ -999,6 +1016,7 @@ hr {
   .ditels {
     display: grid;
     grid-template-columns: auto auto;
+    /* display: inline-block; */
   }
   .foodimg {
     width: 100%;
