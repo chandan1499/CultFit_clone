@@ -21,11 +21,11 @@
             margin: auto;
             display: flex;
         }
-        
+
         .logo>img {
             height: 35px;
         }
-        
+
         .main-div {
             border: 1px solid #0188cc;
             width: 40vw;
@@ -33,7 +33,7 @@
             border-radius: 23px;
             margin: auto;
         }
-        
+
         .header {
             background-color: #0188cc;
             border: 5px solid #0188cc;
@@ -46,7 +46,7 @@
             border-radius: 20px 20px 0 0;
             height: auto;
         }
-        
+
         .cart,
         .payment {
             margin: 20px;
@@ -55,16 +55,16 @@
             font-weight: 800;
             border-bottom: 1px solid #1b3141;
         }
-        
+
         .cart:hover,
         .payment:hover {
             color: #0188cc;
         }
-        
+
         .cart-details {
             margin: 20px;
         }
-        
+
         .cart-details>div {
             display: grid;
             padding: 8px;
@@ -72,76 +72,76 @@
             border-top: 1px solid rgb(173, 167, 167);
             background-color: rgb(248, 248, 248);
         }
-        
+
         .cart-details>div:nth-child(2) {
             background-color: transparent;
         }
-        
+
         .credit-debit {
             margin: 0px 20px 20px 20px;
             display: grid;
             grid-template-columns: 30% 70%;
         }
-        
+
         .credit-debit>div:nth-child(1) {
             padding: 8px;
             border-radius: 5px 5px 0 0;
             border: 1px solid gray;
             border-bottom: none;
         }
-        
+
         .credit-debit>div:nth-child(2) {
             border-bottom: 1px solid gray;
         }
-        
+
         .form {
             margin: 20px;
         }
-        
+
         #myform {
             padding: 0 40px 0 40px;
         }
-        
+
         input {
             padding: 7px;
             border: 1px solid rgb(146, 138, 142);
             border-radius: 3px;
         }
-        
+
         label {
             padding: 7px;
             font-weight: 300;
         }
-        
+
         .div1 {
             display: grid;
             grid-template-columns: 25% 60%;
             margin: 10px;
         }
-        
+
         .div2>div {
             display: grid;
             grid-template-columns: 25% 60%;
             margin: 10px;
         }
-        
+
         .ddmmyy {
             display: grid;
             grid-template-columns: 45% 5% 50%;
         }
-        
+
         .div3 {
             display: grid;
             margin: 10px;
             grid-template-columns: 25% 25% 50%;
         }
-        
+
         .img1 {
             width: auto;
             height: 25px;
             margin: 5px;
         }
-        
+
         .checkbox {
             margin: 20px;
             padding: 3px;
@@ -149,7 +149,7 @@
             font-weight: 300;
             background-color: rgb(238, 211, 154);
         }
-        
+
         .button {
             margin: 20px;
             padding: 20px;
@@ -157,7 +157,7 @@
             text-align: center;
             border-top: 1px solid rgb(190, 187, 187);
         }
-        
+
         button {
             border: 2px solid #0188cc;
             background-color: #067ab4;
@@ -170,52 +170,50 @@
             width: auto;
         }
 
-        
-
         /* RESPONSIVE */
-        
+
         @media (max-width: 1350px) {
             .main-div {
                 width: 55%;
             }
         }
-        
+
         @media (max-width: 1140px) {
             .main-div {
                 width: 60%;
             }
         }
-        
+
         @media (max-width: 1050px) {
             .main-div {
                 width: 65%;
             }
         }
-        
+
         @media (max-width: 950px) {
             .main-div {
                 width: 70%;
             }
         }
-        
+
         @media (max-width: 890px) {
             .main-div {
                 width: 75%;
             }
         }
-        
+
         @media (max-width: 790px) {
             .main-div {
                 width: 80%;
             }
         }
-        
+
         @media (max-width: 630px) {
             .main-div {
                 width: 100%;
             }
         }
-        
+
         .hide {
             display: none;
         }
@@ -283,7 +281,9 @@
                 <div class="div3">
                     <label for="cvv">CVV</label>
                     <input type="password" name="cvv" id="cvv" placeholder="CVV" />
-                    <img class="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ2TDFHhftJx0y6Y4NYXefN6cY0W0zyCNg00wXvQj-ziI5Mr6LxtJmh9aV42JZEDwMPQ&usqp=CAU" alt="" />
+                    <img class="img1"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ2TDFHhftJx0y6Y4NYXefN6cY0W0zyCNg00wXvQj-ziI5Mr6LxtJmh9aV42JZEDwMPQ&usqp=CAU"
+                        alt="" />
                 </div>
             </form>
         </div>
@@ -292,10 +292,8 @@
         </div>
         <div class="button">
             <button onclick="checkoutbtn(event)">
-          Process &nbsp;<i id="amount1" class="fa fa-inr" aria-hidden="true"
-            >&nbsp;&nbsp;0</i
-          >
-        </button>
+                Process &nbsp;<i id="amount1" class="fa fa-inr" aria-hidden="true">&nbsp;&nbsp;0</i>
+            </button>
             <p>
                 By clicking 'Process' button, you acknowledge that you have read and agree to the Terms and Conditions.
             </p>
@@ -363,7 +361,7 @@
                             field.innerHTML = null;
                             let i = arr[a];
 
-                            let stop = setInterval(function() {
+                            let stop = setInterval(function () {
                                 h2.innerHTML = null;
                                 h2.innerHTML = i;
                                 window.location.href = "foodhub.html";
