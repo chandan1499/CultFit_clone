@@ -1033,3 +1033,98 @@ a {
     width: 25%;
   }
 }
+
+
+
+
+
+main {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    width: 90%;
+    margin: 10px auto;
+    background: #1967D2;
+    font-weight: bold;
+    color: white;
+}
+
+/* span {
+    position: absolute;
+    top: 8%;
+    font-size: 60px;
+    font-weight: bold;
+    margin-left: 40px;
+    color: black;
+    cursor: pointer;
+    left: .5%;
+    z-index: 1;
+}
+
+#close-button button span {
+    position: inline;
+    top: 0%;
+    font-size: ;
+    font-weight: 500;
+    margin-left: 0px;
+    color: black;
+    cursor: pointer;
+    left: 0%;
+    z-index: 0;
+} */
+
+span:nth-of-type(2) {
+    left: 92%;
+    text-align: right;
+}
+
+section {
+    width: 79%;
+    height: auto;
+    background: transparent;
+    margin: 10px auto 0px;
+    display: flex;
+    justify-content: left;
+    overflow-x: auto;
+}
+
+section::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+.div {
+    min-width: 365px;
+    height: auto;
+    color: black;
+    position: relative;
+    left: 0;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 100px;
+    font-weight: bold;
+    margin: 10px 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    color: white;
+    background: white;
+    transition: 0.5s;
+}
+
+.div>p {
+    color: black;
+    font-size: 18px;
+    text-align: left;
+    margin: 3px;
+}
+
+.cut {
+    color: gray;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 500;
+    text-decoration: line-through;
+}
