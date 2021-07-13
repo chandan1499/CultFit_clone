@@ -28,7 +28,6 @@ var rotateDropDown = -180;
         else {
             rotateDropDown = -180;
             dropdown.style.display = "none";
-            console.log("hidden");
         }
     }
 

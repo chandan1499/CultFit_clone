@@ -33,6 +33,21 @@
     height: auto;
 }
 
+#closePaymentPage {
+    text-align: right;
+    width: 39%;
+    margin: 0px auto 5px;
+}
+
+#closePaymentPage i {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#closePaymentPage i:hover {
+    opacity: 1;
+}
+
 .cart,
 .payment {
     margin: 20px;

@@ -226,7 +226,6 @@
                 rating,
                 id
             }
-            // console.log(ob)
             let ar = JSON.parse(localStorage.getItem("fooddata"))
             if (ar == null) {
                 ar = []
@@ -258,11 +257,9 @@
     }
     function showdata(e) {
         e.preventDefault()
-        // alert("show data work")
         let par = document.getElementById("display-itm")
         par.innerHTML = null
         let data = JSON.parse(localStorage.getItem("fooddata"))
-        console.log(data)
         data.forEach(element => {
             let cdiv = document.createElement('div')
             cdiv.setAttribute('class', "foodbox")
@@ -270,7 +267,7 @@
             let image = document.createElement('div')
             image.style.backgroundImage = `url("${element.image}")`
             image.setAttribute("class", "foodimg")
-            // image.src = element.image
+            
             let ditels = document.createElement('div')
             ditels.setAttribute("class", "ditels")
 

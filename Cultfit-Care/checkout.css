@@ -23,14 +23,35 @@
 .header {
     background-color: #0188cc;
     border: 5px solid #0188cc;
-    width: 100%;
-    margin: 0;
+    width: 97%;
+    margin: -1px;
     font-size: 18px;
     padding: 5px;
     color: white;
     text-align: center;
     border-radius: 20px 20px 0 0;
     height: auto;
+}
+
+#closePaymentPage {
+    text-align: right;
+    width: 39%;
+    margin: 0px auto 5px;
+    font-size: 25px;
+}
+
+#closePaymentPage i {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+#closePaymentPage i:hover {
+    opacity: 1;
+}
+
+#dateAndTime {
+    font-size: 25px;
+    margin: 5px;
 }
 
 .cart,
@@ -152,6 +173,12 @@ button {
     border-radius: 5px;
     margin-bottom: 15px;
     font-weight: 700;
+}
+
+
+#amount {
+    font-weight: 700;
+    font-size: 18px;
 }
 /* RESPONSIVE */
 
