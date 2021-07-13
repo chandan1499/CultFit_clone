@@ -5,7 +5,7 @@ This project is a complete clone UI with some functionalities of cultfit website
 <ul>
   <li>Clone the repo and run the app.</li>
   <ul>
-    <li>git clone https://github.com/</li>
+    <li>git clone https://github.com/chandan1499/CultFit_clone.git</li>
     <li>cd Cultfit-project</li>
     <li>Open Home.html page and run it</li>
   </ul>
