@@ -1,5 +1,5 @@
 # Cultfit Clone
-This project is a complete clone UI with some functionalities of cultfit website like you can make purchase of clothes, foods from here.
+This project is a complete clone UI with some functionalities of cultfit website like you can make purchase of clothes, foods from here. Used localStorage to save user data, Cart data etc.
 
 ## How to run the app
 <ul>
