@@ -1,27 +1,35 @@
+let hrs = "02";
+let min = "01";
+let sec = "05";
+
 function clock() {
-    let time = new Date();
-    let hrs = time.getHours();
-    let min = time.getMinutes();
-    let sec = time.getSeconds();
-    if (hrs > 12) {
-        hrs = hrs - 12;
+    sec = +(sec)-1;
+    if(sec == 0){
+        min = +(min)-1;
+        if(min == -1){
+            hrs = (+(hrs)-1);
+            if(hrs == -1){
+                hrs = "03";
+                min = "59";
+                sec = "59";
+            }
+            else{
+                hrs = `0${hrs}`;
+            }
+            min = "59";
+        }
+        else if(min >= 0 && min < 10){
+            min = "0"+min;
+        }
+        sec = "59";
     }
-    if (hrs == 0) {
-        hrs=12
-    }
-    if (hrs < 10) {
-        hrs="0"+(time.getHours()-12);
-    }
-    if (min < 10) {
-        min="0"+time.getMinutes();
-    }
-    if (sec < 10) {
-        sec="0"+time.getSeconds();
+    else if(sec > 0 && sec < 10){
+        sec = "0"+sec;
     }
     document.getElementById('clock').innerHTML=`${hrs} : ${min} : ${sec}`
 }
 
-setInterval(clock, 500)
+setInterval(clock, 1000)
 
     var rotateDropDown = -180;
     function dropdowneffect(x) {
