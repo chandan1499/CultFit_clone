@@ -26,4 +26,4 @@ This project is a complete clone UI with some functionalities of cultfit website
 
 
 ## Screenshots
-<img src="./Cultfit_ScreenShots/cart" />
+<img src="./Cultfit_ScreenShots/cart.png" />
