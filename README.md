@@ -23,3 +23,7 @@ This project is a complete clone UI with some functionalities of cultfit website
   <li>Font awesome</li>
   <li>Google fonts</li>
 </ul>
+
+
+## Screenshots
+<img src="./Cultfit_ScreenShots/cart" />
