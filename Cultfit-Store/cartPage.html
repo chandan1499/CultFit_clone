@@ -489,7 +489,7 @@
 
 
             let itemPrice = item.cutprice;
-            itemPrice = +(itemPrice.slice(2));
+            itemPrice = Number(itemPrice.slice(2));
 
             total_price += (itemPrice * (item.qty));
 

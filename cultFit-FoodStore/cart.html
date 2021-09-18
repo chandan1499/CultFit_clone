@@ -552,9 +552,9 @@
                 cartItems.append(product, hr);
             }
 
-            let itemPrice = +item.price;
+            let itemPrice = Number(item.price);
 
-            total_price += itemPrice * Number(item.qty);
+            total_price += itemPrice * item.qty;
 
             total_discount = total_price * 0.4;
         });
