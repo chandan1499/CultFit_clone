@@ -66,7 +66,7 @@
                                 </a>
                             </div>
                             <div id="cart">
-                                <a href="cartpage.html">
+                                <a href="cartPage.html">
                                     <img src="https://static.cure.fit/assets/images/cart-image.svg" alt="" />
                                     <span id="badge" style="
                         color: #f37597;
@@ -638,7 +638,7 @@
                 store = [];
                 store.push(obj);
                 localStorage.setItem("store", JSON.stringify(store));
-                window.location.href = "cartpage.html";
+                window.location.href = "cartPage.html";
             } else {
                 store = JSON.parse(localStorage.getItem("store"));
                 let found = false;
@@ -647,14 +647,14 @@
                         store[o].qty += 1;
                         localStorage.setItem("store", JSON.stringify(store));
                         found = true;
-                        window.location.href = "cartpage.html";
+                        window.location.href = "cartPage.html";
                         break;
                     }
                 }
                 if (!found) {
                     store.push(obj);
                     localStorage.setItem("store", JSON.stringify(store));
-                    window.location.href = "cartpage.html";
+                    window.location.href = "cartPage.html";
                 }
             }
 
