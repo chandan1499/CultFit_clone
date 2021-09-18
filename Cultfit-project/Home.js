@@ -124,7 +124,7 @@ function logout() {
     }
 
     localStorage.setItem('cultUserName', JSON.stringify(currentUser));
-    window.location.href = "home.html";
+    window.location.href = "Home.html";
 }
 
 function displayCart() {
@@ -164,7 +164,7 @@ function verifyLogin() {
             else {
                 alert("User already logged in");
             }
-            window.location.href = "home.html";
+            window.location.href = "Home.html";
         }
         else {
             alert("Invalid Credentials!");
